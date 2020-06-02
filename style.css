@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction:column;
+}
+
+#canvas {
+border: 2px black solid;  
+background-color: beige;
+}
+
+h1 {
+  color: aqua;
+}
