@@ -1,12 +1,9 @@
 <template>
   <div class="home">
-    <img
-      alt="SkitMe Logo"
-      src="../assets/skitme-logo.svg"
-      style="width: 50px"
-    />
+    <img alt="SkitMe Logo" src="../assets/skitmelogo.svg" />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Canvas width="800" height="600" color="green" /> -->
+    <Canvas width="800" height="600" color="000000" /> -->
+    <Timer />
     <PreStartDraw />
     <PreStartWrite />
     <ActiveDrawing />
@@ -18,6 +15,7 @@
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
 // import Canvas from "@/components/Canvas.vue";
+import Timer from "@/components/Timer.vue";
 import PreStartDraw from "@/components/PreStartDraw.vue";
 import PreStartWrite from "@/components/PreStartWrite.vue";
 import ActiveDrawing from "@/components/ActiveDrawing.vue";
@@ -28,6 +26,7 @@ export default {
   components: {
     // HelloWorld,
     // Canvas,
+    Timer,
     PreStartDraw,
     PreStartWrite,
     ActiveDrawing,

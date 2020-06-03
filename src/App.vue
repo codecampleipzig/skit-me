@@ -17,6 +17,12 @@
   color: #2c3e50;
 }
 
+body {
+  background-image: url(assets/background-image.png);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
 #nav {
   padding: 30px;
 }
@@ -30,7 +36,11 @@
   color: #42b983;
 }
 
+canvas {
+  background-image: url(assets/canvas-background.jpg);
+}
+
 .home img {
-  width: 50px;
+  width: 250px;
 }
 </style>

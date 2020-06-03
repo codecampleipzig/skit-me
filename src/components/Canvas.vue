@@ -4,6 +4,7 @@
       :width="width"
       :height="height"
       ref="canvas"
+      style="background-image: url(../assets/)"
       @mousedown="startDraw"
       @mouseup="finishDraw"
       @mousemove="draw"
