@@ -14,7 +14,7 @@ import Canvas from "@/components/Canvas.vue";
 export default {
   name: "PreStartDraw",
   components: {
-    PreStartDraw
+    Canvas
   }
 };
 </script>

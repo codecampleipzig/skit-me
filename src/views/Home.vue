@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img
+      alt="SkitMe Logo"
+      src="../assets/skitme-logo.svg"
+      style="width: 50px"
+    />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" />
     <Canvas width="800" height="600" color="green" /> -->
     <PreStartDraw />
