@@ -1,9 +1,12 @@
 <template>
   <div class="container">
     <p class="instruction">
-      Player 1- Hit start and draw the title that appeares before time runs out
+      Hit start and draw the title that appeares before time runs out
     </p>
-    <button  class="startButton" type="submit" @click="start" v-if="!hasStarted">Start</button>
+    <p class="playerName">Player 1</p>
+    <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
+      Start the Game
+    </button>
     <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
     <Canvas ref="canvas" width="800" height="600" :disabled="!isActive" />
   </div>
@@ -38,7 +41,6 @@ export default {
     finished() {
       this.isFinished = true;
       this.$emit("gamephasedone", this.$refs.canvas.getImage());
-     
     }
   }
 };

@@ -12,7 +12,6 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 // import Canvas from "@/components/Canvas.vue";
 import Timer from "@/components/Timer.vue";
 import PreStartDraw from "@/components/PreStartDraw.vue";

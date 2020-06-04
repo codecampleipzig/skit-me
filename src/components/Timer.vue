@@ -1,5 +1,5 @@
 <template>
-    <div class="countdown">{{ countdown }}</div>
+    <div class="countdown">Starting in {{ countdown }} seconds</div>
 </template>
 
 <script>
