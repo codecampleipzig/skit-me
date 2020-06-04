@@ -1,7 +1,5 @@
 <template>
-  <div class="timer">
     <div class="countdown">{{ countdown }}</div>
-  </div>
 </template>
 
 <script>
@@ -43,4 +41,8 @@ export default {
 
 // Timer // Reset display at startup
 
-<style scoped></style>
+<style scoped>
+.countdown {
+size: 10em
+}
+</style>

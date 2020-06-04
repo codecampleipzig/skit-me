@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p>
+    <p class="instruction">
       Player 2- Describe the picture with an awesome title
     </p>
     <div><Canvas width="800" height="600" color="green" /></div>

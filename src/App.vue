@@ -9,6 +9,10 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +27,7 @@ body {
   background-attachment: fixed;
 }
 
+
 #nav {
   padding: 30px;
 }
@@ -34,6 +39,29 @@ body {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.instruction {
+  font-family: 'Rock Salt', cursive;
+}
+
+.drawThisTitle {
+  font-family: 'Secular One', sans-serif;
+}
+
+.button {
+  background-color: #008080;
+  font-family: 'Secular One', sans-serif;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .home img {

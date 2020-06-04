@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <img alt="SkitMe Logo" src="../assets/skitmelogo.svg" />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Canvas width="800" height="600" color="000000" /> -->
-    <Timer />
-    <component
+        <component
       :is="activeComponent"
       @gamephasedone="nextPhase"
       :payload="activePayload"
