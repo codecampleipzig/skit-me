@@ -1,6 +1,6 @@
 <template>
   <div class="timer">
-    <div class="countdown" id="countdown">{{ countdown }}</div>
+    <div class="countdown">{{ countdown }}</div>
   </div>
 </template>
 
@@ -8,23 +8,22 @@
 export default {
   name: "Timer",
   props: {
-    timeDisplay: {
-      type: String,
-      default: "45000"
+    timerLengthInMs: {
+      type: Number,
+      default: 45000
     }
   },
   data: function() {
     return {
-      countdown: 0,
+      countdown: this.timerLengthInMs / 1000,
       intervalHandle: null
     };
   },
   methods: {
     startTimer() {
       const startTime = Date.now();
-      const endTime = startTime + countdownDurationInMs;
-      const countdownDurationInMs = 1000;
-      this.countdown = Math.round(countdownDurationInMs / 1000);
+      const endTime = startTime + this.timerLengthInMs;
+      this.countdown = Math.round(this.timerLengthInMs / 1000);
 
       this.intervalHandle = setInterval(() => {
         const remainingTimeInMs = endTime - Date.now();
@@ -34,6 +33,7 @@ export default {
           clearInterval(this.intervalHandle);
           this.intervalHandle = null;
           this.countdown = 0;
+          this.$emit("timerfinished");
         }
       }, 1000);
     }

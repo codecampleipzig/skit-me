@@ -36,10 +36,6 @@ body {
   color: #42b983;
 }
 
-canvas {
-  background-image: url(assets/canvas-background.jpg);
-}
-
 .home img {
   width: 250px;
 }

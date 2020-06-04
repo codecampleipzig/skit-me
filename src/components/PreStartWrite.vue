@@ -4,17 +4,20 @@
       Player 1- Hit start and write the title that appeares before time runs out
     </p>
     <button type="submit">Start</button>
-    <div><Canvas width="800" height="600" color="green" /></div>
+    <input type="text" />
+    <img :src="imgURL" />
   </div>
 </template>
 
 <script>
-import Canvas from "@/components/Canvas.vue";
-
 export default {
   name: "PreStartWrite",
-  components: {
-    Canvas
+  components: {},
+  props: ["payload"],
+  data() {
+    return {
+      imgURL: ""
+    };
   }
 };
 </script>
