@@ -1,11 +1,15 @@
 <template>
   <div class="container">
+    <p class="playerName">Player 2</p>
     <p class="instruction">
-      Player 1- Hit start and write the title that appeares before time runs out
+      What do you see? <br />Find a title for this piece of art before time runs
+      out!
+      <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
     </p>
-    <button class="startButton" type="submit" @click="start" v-if="!hasStarted">Start the Game</button>
-    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
-    <input type="text" />
+    <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
+      Start the Game
+    </button>
+    <input class="newTitleInput" type="text" />
     <img :disabled="!isActive" />
     <img :src="imgURL" />
   </div>
@@ -17,7 +21,7 @@ import Timer from "@/components/Timer.vue";
 export default {
   name: "PreStartWrite",
   components: {
-  Timer
+    Timer
   },
   props: ["payload"],
   data() {
@@ -33,7 +37,7 @@ export default {
     }
   },
   methods: {
-  start() {
+    start() {
       this.$refs.timer.startTimer();
       this.hasStarted = true;
     },

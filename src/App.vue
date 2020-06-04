@@ -44,13 +44,13 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1.7em;
-  background-color:#F7B501;
+  background-color: #f7b501;
   color: white;
   padding: 12px 32px;
   display: block;
   width: 30%;
   margin: 10px auto;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .instruction {
@@ -63,7 +63,7 @@ body {
   display: block;
   width: 80%;
   margin: 10px auto;
-  margin-top: 2em;
+  /* margin-top: 2em; */
 }
 
 .drawThisTitle {
@@ -86,13 +86,22 @@ body {
 }
 
 .countdown {
-  font-size: 1.5em;
-  background-color: white;
+  font-size: 1.3em;
+  /* background-color: white; */
   font-family: "Secular One", sans-serif;
-  padding: 12px 32px;
+  padding: 12px 2px;
   display: block;
-  width: 30%;
+  width: 80%;
   margin: 10px auto;
+  color: #f7b501;
+}
+.newTitleInput {
+  display: block;
+  width: 80%;
+  height: 2em;
+  padding: 0.5em;
+  font-size: 2em;
+  margin: 4px auto;
 }
 
 .home img {
