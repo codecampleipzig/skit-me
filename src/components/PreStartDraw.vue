@@ -2,13 +2,16 @@
   <div class="container">
     <p class="playerName">Player 1</p>
     <p class="instruction">
-      How would you draw this? Be Picasso and draw this sentence before time
-      runs out !
+      How would you draw this? <br />Be Picasso and draw this before time runs
+      out !
       <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
     </p>
     <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
       Start the Game
     </button>
+    <p class="drawThisTitle" v-if="hasStarted">
+      A cookie drank my milk
+    </p>
     <Canvas ref="canvas" width="800" height="600" :disabled="!isActive" />
   </div>
 </template>

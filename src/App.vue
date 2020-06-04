@@ -68,6 +68,16 @@ body {
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.7em;
+  background-color: #f7b501;
+  color: rgb(63, 62, 62);
+  padding: 12px;
+  display: block;
+  width: 800px;
+  margin: 10px auto;
+  margin-top: 2em;
 }
 
 .startButton {

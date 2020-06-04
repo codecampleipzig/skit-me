@@ -1,17 +1,21 @@
 <template>
   <div class="container">
-    <p class="playerName">Player 2</p>
+    <p class="playerName">Player 1</p>
     <p class="instruction">
       What do you see? <br />Find a title for this piece of art before time runs
       out!
-      <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="10000" ref="timer" @timerfinished="finished" />
     </p>
     <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
       Start the Game
     </button>
-    <input class="newTitleInput" type="text" />
+    <input v-if="hasStarted" class="newTitleInput" type="text" />
     <img :disabled="!isActive" />
-    <img :src="imgURL" />
+    <img
+      v-if="hasStarted"
+      style="width: 40%; margin: 5px auto;"
+      src="../assets/mock.jpg"
+    />
   </div>
 </template>
 
