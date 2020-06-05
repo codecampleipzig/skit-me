@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currentStage: {
-      name: "start"
+      name: "StartScreen"
     },
     gameParameters: null,
     results: []
@@ -30,7 +30,7 @@ export default new Vuex.Store({
     startGame(ctx, gameParameters) {
       //gameParameters are set/comming in the component waiting room?TODO
       ctx.commit("SETUP_GAME", gameParameters);
-      ctx.commit("SET_NEXT_STAGE", { name: "seed" });
+      ctx.commit("SET_NEXT_STAGE", { name: "GameSeedPhase" });
     },
     completeSeed({ commit }, descriptionTitle) {
       commit("PUSH_NEW_RESULT", { type: "descriptionTitle", descriptionTitle });
