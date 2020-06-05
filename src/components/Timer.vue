@@ -1,5 +1,5 @@
 <template>
-    <div class="countdown">Time left: {{ countdown }} seconds</div>
+  <div class="countdown">Time left: {{ countdown }} seconds</div>
 </template>
 
 <script>
@@ -43,6 +43,6 @@ export default {
 
 <style scoped>
 .countdown {
-size: 10em
+  size: 10em;
 }
 </style>

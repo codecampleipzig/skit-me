@@ -9,13 +9,19 @@
 // @ is an alias to /src
 import StartScreen from "@/components/StartScreen.vue";
 import GameSeedPhase from "@/components/GameSeedPhase.vue";
+import DrawingPhase from "@/components/DrawingPhase.vue";
+import WritingPhase from "@/components/WritingPhase.vue";
+import GameEndPhase from "@/components/GameEndPhase.vue";
 
 export default {
   name: "Home",
 
   components: {
     StartScreen,
-    GameSeedPhase
+    GameSeedPhase,
+    DrawingPhase,
+    WritingPhase,
+    GameEndPhase
   },
   computed: {
     activeComponent() {

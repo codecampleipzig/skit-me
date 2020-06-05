@@ -34,12 +34,12 @@ export default new Vuex.Store({
     },
     completeSeed({ commit }, descriptionTitle) {
       commit("PUSH_NEW_RESULT", { type: "descriptionTitle", descriptionTitle });
-      commit("SET_NEXT_STAGE", { name: "drawing", descriptionTitle });
+      commit("SET_NEXT_STAGE", { name: "DrawingPhase", descriptionTitle });
     },
     completeDrawing(ctx, drawingURL) {
       //later from here we'll call a database witch the drawingURL to pass the drawing
       ctx.commit("PUSH_NEW_RESULT", { type: "drawing", drawingURL });
-      ctx.commit("SET_NEXT_STAGE", { name: "writing", drawingURL });
+      ctx.commit("SET_NEXT_STAGE", { name: "WritingPhase", drawingURL });
     },
     completeWriting(ctx, descriptionTitle) {
       //later from here we'll call a database witch the drawingURL to pass the drawing
@@ -48,9 +48,12 @@ export default new Vuex.Store({
         descriptionTitle
       });
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
-        ctx.commit("SET_NEXT_STAGE", { name: "drawing", descriptionTitle });
+        ctx.commit("SET_NEXT_STAGE", {
+          name: "DrawingPhase",
+          descriptionTitle
+        });
       } else {
-        ctx.commit("SET_NEXT_STAGE", { name: "GameEnd" });
+        ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
       }
     }
   },
