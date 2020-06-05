@@ -27,6 +27,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    restartGame(ctx) {
+      ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
+    },
     startGame(ctx, gameParameters) {
       //gameParameters are set/comming in the component waiting room?TODO
       ctx.commit("SETUP_GAME", gameParameters);
