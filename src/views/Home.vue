@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="SkitMe Logo" src="../assets/skitmelogo.svg" />
-        <component
+    <component
       :is="activeComponent"
       @gamephasedone="nextPhase"
       :payload="activePayload"
@@ -12,8 +12,6 @@
 
 <script>
 // @ is an alias to /src
-// import Canvas from "@/components/Canvas.vue";
-import Timer from "@/components/Timer.vue";
 import PreStartDraw from "@/components/PreStartDraw.vue";
 import PreStartWrite from "@/components/PreStartWrite.vue";
 import ActiveDrawing from "@/components/ActiveDrawing.vue";
@@ -23,7 +21,6 @@ export default {
   name: "Home",
   data() {
     return {
-      activeComponent: "PreStartDraw",
       activePayload: null,
       images: []
     };
@@ -31,11 +28,15 @@ export default {
   components: {
     // HelloWorld,
     // Canvas,
-    Timer,
-    PreStartDraw,
-    PreStartWrite,
+    start: PreStartDraw,
+    seed: PreStartWrite,
     ActiveDrawing,
     ActiveWriting
+  },
+  computed: {
+    activeComponent() {
+      return this.$store.state.currentStage.name;
+    }
   },
   methods: {
     nextPhase(payload) {

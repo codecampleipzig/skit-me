@@ -9,7 +9,12 @@
     <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
       Start the Game
     </button>
-    <input v-if="hasStarted" class="newTitleInput" type="text" />
+    <input
+      v-model="description"
+      v-if="hasStarted"
+      class="newTitleInput"
+      type="text"
+    />
     <img :disabled="!isActive" />
     <img
       v-if="hasStarted"
@@ -32,7 +37,8 @@ export default {
     return {
       imgURL: "",
       hasStarted: false,
-      isFinished: false
+      isFinished: false,
+      description: ""
     };
   },
   computed: {
@@ -47,7 +53,7 @@ export default {
     },
     finished() {
       this.isFinished = true;
-      this.$emit("gamephasedone", this.$refs.canvas.getImage());
+      this.$store.dispatch("completeWriting", this.description); //wired up with the v-model on the input tag and data prop
     }
   }
 };

@@ -6,6 +6,8 @@
       ref="canvas"
       @mousedown="startDraw"
       @mouseup="finishDraw"
+      @mouseleave="finishDraw"
+      @mouseenter="continueDraw"
       @mousemove="draw"
     ></canvas>
   </div>
@@ -73,14 +75,14 @@ export default {
       this.ctx.closePath();
       this.painting = false;
     },
+    continueDraw(e) {
+      console.log(e);
+      if (e.buttons == 1) {
+        this.startDraw(e);
+      }
+    },
     getImage() {
-      const canvasBounds = this.$refs.canvas.getBoundingClientRect();
-      return this.ctx.getImageData(
-        0,
-        0,
-        canvasBounds.width,
-        canvasBounds.height
-      );
+      return this.$refs.canvas.toDataURL(); //
     }
   }
 };
