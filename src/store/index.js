@@ -44,29 +44,14 @@ const store = new Vuex.Store({
           console.error(response.error);
           return;
         }
-        localStorage.setItem("userId", response.userId);
         ctx.commit("SET_ROOM", response.room);
         ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
         router.push({ name: "Room", params: { roomId } });
-      });
-      //send joinRoom event through socket to server, display waiting bar, wait for response from server
-    },
-    reconnectToRoom(ctx, userId) {
-      socket.emit("reconnectRoom", { userId }, response => {
-        if (response.error) {
-          localStorage.removeItem("userId");
-          console.error(response.error);
-          return;
-        }
-        ctx.commit("SET_ROOM", response.room);
-        ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
-        router.push({ name: "Room", params: { roomId: response.room.roomId } });
       });
     },
     roomUpdate(ctx, room) {
       ctx.commit("SET_ROOM", room);
     },
-
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
     },

@@ -26,13 +26,7 @@ const routes = [
     props: true,
     beforeEnter(to, from, next) {
       if (!store.state.room) {
-        const userId = localStorage.getItem("userId");
-
-        if (!userId) {
-          next({ name: "JoinRoom", params: { roomId: to.params.roomId } });
-        } else {
-          store.dispatch("reconnectToRoom", userId);
-        }
+        next({ name: "JoinRoom", params: { roomId: to.params.roomId } });
       } else {
         next();
       }
