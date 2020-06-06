@@ -12,7 +12,7 @@ new Vue({
   render: (h) => h(App),
 }).$mount("#app");
 
-const socket = io("http://172.30.9.32:1234");
+const socket = io("http://localhost:1234");
 socket.emit("hello", "from client");
 socket.on("hello back", (data) => {
   console.log(data);

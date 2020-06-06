@@ -1,4 +1,25 @@
-// Waiting are before game starts // Change of input parameters like: // -
-Number of players wanted for game // - Timer settings for normal, speedy, lazy
-round // Calculated game time based on Number of players * Timer settings //
-Input field for player name
+<template>
+  <div>
+    <p>Welcome to the Player Lobby</p>
+    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
+  </div>
+</template>
+
+<script>
+import Timer from "@/components/Timer.vue";
+export default {
+  components: {
+    Timer
+  },
+  mounted() {
+    this.$refs.timer.startTimer();
+  },
+  methods: {
+    finished() {
+      this.$store.dispatch("completePlayerLobby");
+    }
+  }
+};
+</script>
+
+<style scoped></style>

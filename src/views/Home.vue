@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import StartScreen from "@/components/StartScreen.vue";
+import PlayerLobby from "@/components/PlayerLobby.vue";
 import GameSeedPhase from "@/components/GameSeedPhase.vue";
 import DrawingPhase from "@/components/DrawingPhase.vue";
 import WritingPhase from "@/components/WritingPhase.vue";
@@ -18,6 +19,7 @@ export default {
 
   components: {
     StartScreen,
+    PlayerLobby,
     GameSeedPhase,
     DrawingPhase,
     WritingPhase,
