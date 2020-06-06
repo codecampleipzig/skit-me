@@ -1,5 +1,5 @@
 <template>
-  <div class="countdown">Time left: {{ countdown }} seconds</div>
+  <div class="countdown">{{ countdown }}</div>
 </template>
 
 <script>
@@ -42,7 +42,4 @@ export default {
 // Timer // Reset display at startup
 
 <style scoped>
-.countdown {
-  size: 10em;
-}
 </style>

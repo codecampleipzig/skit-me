@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-    <div id="nav">
       <router-link to="/"> </router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 
 #app {
@@ -40,7 +37,7 @@ body {
 }
 
 .playerName {
-  font-family: "Rock Salt", cursive;
+  font-family: "Indie Flower", cursive;
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1.7em;
@@ -53,18 +50,24 @@ body {
   margin-top: 2em;
 }
 
-.instruction {
-  font-family: "Rock Salt", cursive;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1.7em;
-  background-color: white;
-  padding: 12px 32px;
-  display: block;
-  width: 80%;
+.instructions {
+  font-family: "Indie Flower", cursive;
+  background-color: rgb(253, 253, 226);
+  size: 1em;
+  text-align: center;
+  width: 60%;
+  height: 75px;
   margin: 10px auto;
+  border: #D2723A 2px dotted;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
   /* margin-top: 2em; */
 }
+
+.instructions h2{
+margin: 0 auto;
+  }
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
@@ -78,6 +81,14 @@ body {
   width: 800px;
   margin: 10px auto;
   margin-top: 2em;
+}
+
+#panic-button {
+background-color: rgb(255, 182, 139);
+font-family: "Secular One", sans-serif;
+font-size: 1.5em;
+color: red;
+border: black 2px solid;
 }
 
 .startButton {
@@ -96,25 +107,33 @@ body {
 }
 
 .countdown {
-  font-size: 1.3em;
-  /* background-color: white; */
-  font-family: "Secular One", sans-serif;
-  padding: 12px 2px;
-  display: block;
-  width: 80%;
-  margin: 10px auto;
-  color: #f7b501;
-}
-.newTitleInput {
-  display: block;
-  width: 80%;
-  height: 2em;
-  padding: 0.5em;
   font-size: 2em;
-  margin: 4px auto;
+  font-family: "Secular One", sans-serif;
+  color: rgb(0, 0, 0);
+ width: 1.5em;
+ height: 1.5em;
+  display: block;
+  background-color: #D2723A;
+  position: absolute;
+  margin: 5px 200px;
+  top: 500;
+  border: black 3px solid;
+  border-radius: 50%;
+}
+
+input {
+  display: block;
+  width: 753px;
+  height: 1em;
+ padding: 0 1em;
+  margin: 20px auto;
+  font-size: 2em;
+  border: black 3px solid ;
 }
 
 .home img {
   width: 250px;
+  margin: auto;
 }
+
 </style>
