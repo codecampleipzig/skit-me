@@ -2,9 +2,9 @@
   <div>
     <h1>The End</h1>
     <button @click="restartGame">restart Game</button>
-    <div v-for="(result,index) in  $store.state.results" :key="index">
-      <img v-if="result.type == 'drawing' " :src="result.drawingURL" alt />
-      <h2 v-else>{{result.descriptionTitle}}</h2>
+    <div v-for="(result, index) in $store.state.results" :key="index">
+      <img v-if="result.type == 'drawing'" :src="result.drawingURL" />
+      <h2 v-else>{{ result.descriptionTitle }}</h2>
     </div>
   </div>
 </template>
@@ -14,8 +14,8 @@ export default {
   methods: {
     restartGame() {
       this.$store.dispatch("restartGame");
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -9,11 +9,10 @@
 export default {
   methods: {
     startGame() {
-      this.$store.dispatch("startGame", { numRounds: 4 });
-    }
-  }
+      this.$store.dispatch("startGame", { numRounds: 5 });
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
