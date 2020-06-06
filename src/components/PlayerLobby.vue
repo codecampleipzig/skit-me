@@ -3,9 +3,7 @@
     <p>Welcome to the Player Lobby</p>
     <p
       :key="index"
-      v-for="(player, index) in room.players.filter(
-        (player) => player.connected
-      )"
+      v-for="(player, index) in room.players.filter(player => player.connected)"
     >
       {{ player.userName }}
     </p>
@@ -18,14 +16,14 @@ export default {
   computed: {
     room() {
       return this.$store.state.room;
-    },
+    }
   },
 
   methods: {
     finished() {
       this.$store.dispatch("completePlayerLobby");
-    },
-  },
+    }
+  }
 };
 </script>
 
