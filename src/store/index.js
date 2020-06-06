@@ -11,11 +11,11 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen"
+      name: "StartScreen",
     },
     gameParameters: null,
     results: [],
-    room: null
+    room: null,
   },
   mutations: {
     SET_NEXT_STAGE(state, stage) {
@@ -34,12 +34,16 @@ const store = new Vuex.Store({
     PUSH_NEW_RESULT(state, result) {
       //result data coming from the last stage either sentence or drawingURL
       state.results.push(result);
-    }
+    },
   },
   actions: {
     joinRoom(ctx, { roomId, userName }) {
-      socket.emit("joinRoom", { userName, roomId }, response => {
+      socket.emit("joinRoom", { userName, roomId }, (response) => {
         console.log(response);
+        if (response.error) {
+          console.error(response.error);
+          return;
+        }
         ctx.commit("SET_ROOM", response);
         ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
         router.push({ name: "Room", params: { roomId } });
@@ -72,7 +76,7 @@ const store = new Vuex.Store({
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
         ctx.commit("SET_NEXT_STAGE", {
           name: "WritingPhase",
-          drawingURL
+          drawingURL,
         });
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
@@ -82,22 +86,22 @@ const store = new Vuex.Store({
       //later from here we'll call a database witch the drawingURL to pass the drawing
       ctx.commit("PUSH_NEW_RESULT", {
         type: "descriptionTitle",
-        descriptionTitle
+        descriptionTitle,
       });
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
         ctx.commit("SET_NEXT_STAGE", {
           name: "DrawingPhase",
-          descriptionTitle
+          descriptionTitle,
         });
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
       }
-    }
+    },
   },
-  modules: {}
+  modules: {},
 });
 
-socket.on("roomUpdate", room => {
+socket.on("roomUpdate", (room) => {
   store.dispatch("roomUpdate", room);
 });
 export default store;
