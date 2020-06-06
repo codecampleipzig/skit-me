@@ -1,9 +1,11 @@
 <template>
   <div>
     <h1>Drawing</h1>
-    <Timer :timerLengthInMs="8000" ref="timer" @timerfinished="finished" />
+    <Timer :timerLengthInMs="40000" ref="timer" @timerfinished="finished" />
 
-    <h2>{{$store.state.currentStage.descriptionTitle || "something went wrong"}}</h2>
+    <h2>
+      {{ $store.state.currentStage.descriptionTitle || "something went wrong" }}
+    </h2>
     <Canvas width="800" height="600" color="green" ref="canvas" />
   </div>
 </template>
@@ -32,5 +34,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

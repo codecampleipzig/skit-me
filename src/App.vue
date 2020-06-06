@@ -4,6 +4,9 @@
       <router-link to="/"> </router-link>
     </div>
     <router-view />
+    <div class="overlay" v-if="$store.state.waiting">
+      <h2>Waiting for other players...</h2>
+    </div>
   </div>
 </template>
 
@@ -78,6 +81,18 @@ body {
   width: 800px;
   margin: 10px auto;
   margin-top: 2em;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .startButton {
