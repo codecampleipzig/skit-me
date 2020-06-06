@@ -6,10 +6,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen"
+      name: "StartScreen",
     },
     gameParameters: null,
-    results: []
+    results: [],
   },
   mutations: {
     SET_NEXT_STAGE(state, stage) {
@@ -24,7 +24,7 @@ export default new Vuex.Store({
     PUSH_NEW_RESULT(state, result) {
       //result data coming from the last stage either sentence or drawingURL
       state.results.push(result);
-    }
+    },
   },
   actions: {
     restartGame(ctx) {
@@ -42,23 +42,30 @@ export default new Vuex.Store({
     completeDrawing(ctx, drawingURL) {
       //later from here we'll call a database witch the drawingURL to pass the drawing
       ctx.commit("PUSH_NEW_RESULT", { type: "drawing", drawingURL });
-      ctx.commit("SET_NEXT_STAGE", { name: "WritingPhase", drawingURL });
+      if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
+        ctx.commit("SET_NEXT_STAGE", {
+          name: "WritingPhase",
+          drawingURL,
+        });
+      } else {
+        ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
+      }
     },
     completeWriting(ctx, descriptionTitle) {
       //later from here we'll call a database witch the drawingURL to pass the drawing
       ctx.commit("PUSH_NEW_RESULT", {
         type: "descriptionTitle",
-        descriptionTitle
+        descriptionTitle,
       });
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
         ctx.commit("SET_NEXT_STAGE", {
           name: "DrawingPhase",
-          descriptionTitle
+          descriptionTitle,
         });
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
       }
-    }
+    },
   },
-  modules: {}
+  modules: {},
 });

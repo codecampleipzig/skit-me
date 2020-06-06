@@ -9,7 +9,7 @@
 export default {
   methods: {
     startGame() {
-      this.$store.dispatch("startGame", { numRounds: 5 });
+      this.$store.dispatch("startGame", { numRounds: 4 });
     }
   }
 };
