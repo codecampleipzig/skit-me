@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>Drawing</h1>
-    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
-    <div>
-      <Canvas width="800" height="600" color="green" />
-    </div>
+    <Timer :timerLengthInMs="8000" ref="timer" @timerfinished="finished" />
+
+    <h2>{{$store.state.currentStage.descriptionTitle}}</h2>
+    <Canvas width="800" height="600" color="green" ref="canvas" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     finished() {
-      this.$store.dispatch("completeDrawing", this.drawingURL);
+      this.$store.dispatch("completeDrawing", this.$refs.canvas.getImage());
     }
   }
 };

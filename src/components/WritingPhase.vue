@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1>Writing</h1>
+    <img :src="$store.state.currentStage.drawingURL" />
+    <Timer :timerLengthInMs="4000" ref="timer" @timerfinished="finished" />
     <input v-model="descriptionTitle" type="text" />
-    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
   </div>
 </template>
 
@@ -29,5 +30,10 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+img {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+}
 </style>
