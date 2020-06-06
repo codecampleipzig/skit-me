@@ -8,7 +8,7 @@ const socket = io("http://localhost:1234");
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     currentStage: {
       name: "StartScreen"
@@ -46,6 +46,10 @@ export default new Vuex.Store({
       });
       //send joinRoom event through socket to server, display waiting bar, wait for response from server
     },
+    roomUpdate(ctx, room) {
+      ctx.commit("SET_ROOM", room);
+    },
+
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
     },
@@ -92,3 +96,8 @@ export default new Vuex.Store({
   },
   modules: {}
 });
+
+socket.on("roomUpdate", room => {
+  store.dispatch("roomUpdate", room);
+});
+export default store;
