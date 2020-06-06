@@ -11,20 +11,21 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen",
+      name: "StartScreen"
     },
     gameParameters: null,
-    roomId: 3,
     results: [],
+    room: null
   },
   mutations: {
     SET_NEXT_STAGE(state, stage) {
       //parameter stage is a stage object as defined in line 8
       state.currentStage = stage;
     },
-    SET_ROOM_ID(state, roomId) {
-      state.roomId = roomId;
+    SET_ROOM(state, room) {
+      state.room = room;
     },
+
     SETUP_GAME(state, gameParameters) {
       //parameter stage is a stage object as defined in line 8
       state.gameParameters = gameParameters;
@@ -33,12 +34,14 @@ export default new Vuex.Store({
     PUSH_NEW_RESULT(state, result) {
       //result data coming from the last stage either sentence or drawingURL
       state.results.push(result);
-    },
+    }
   },
   actions: {
     joinRoom(ctx, { roomId, userName }) {
-      socket.emit("joinRoom", { userName, roomId }, (response) => {
+      socket.emit("joinRoom", { userName, roomId }, response => {
         console.log(response);
+        ctx.commit("SET_ROOM", response);
+        ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
         router.push({ name: "Room", params: { roomId } });
       });
       //send joinRoom event through socket to server, display waiting bar, wait for response from server
@@ -65,7 +68,7 @@ export default new Vuex.Store({
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
         ctx.commit("SET_NEXT_STAGE", {
           name: "WritingPhase",
-          drawingURL,
+          drawingURL
         });
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
@@ -75,17 +78,17 @@ export default new Vuex.Store({
       //later from here we'll call a database witch the drawingURL to pass the drawing
       ctx.commit("PUSH_NEW_RESULT", {
         type: "descriptionTitle",
-        descriptionTitle,
+        descriptionTitle
       });
       if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
         ctx.commit("SET_NEXT_STAGE", {
           name: "DrawingPhase",
-          descriptionTitle,
+          descriptionTitle
         });
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
       }
-    },
+    }
   },
-  modules: {},
+  modules: {}
 });

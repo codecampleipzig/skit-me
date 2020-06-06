@@ -1,19 +1,19 @@
 <template>
   <div>
     <p>Welcome to the Player Lobby</p>
-    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
+    <p :key="index" v-for="(player, index) in room.players">{{ player }}</p>
+    <p>http://localhost:8080/join/{{ room.roomId }}</p>
   </div>
 </template>
 
 <script>
-import Timer from "@/components/Timer.vue";
 export default {
-  components: {
-    Timer
+  computed: {
+    room() {
+      return this.$store.state.room;
+    }
   },
-  mounted() {
-    this.$refs.timer.startTimer();
-  },
+
   methods: {
     finished() {
       this.$store.dispatch("completePlayerLobby");
