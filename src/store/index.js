@@ -60,9 +60,8 @@ const store = new Vuex.Store({
     signalReady() {
       socket.emit("signalReady");
     },
-    completeSeed({ commit }, descriptionTitle) {
-      commit("PUSH_NEW_RESULT", { type: "descriptionTitle", descriptionTitle });
-      commit("SET_NEXT_STAGE", { name: "DrawingPhase", descriptionTitle });
+    completeSeed(ctx, descriptionTitle) {
+      socket.emit("completeWriting", descriptionTitle);
     },
     completeDrawing(ctx, drawingURL) {
       //later from here we'll call a database witch the drawingURL to pass the drawing
@@ -104,6 +103,13 @@ socket.on("roomUpdate", room => {
 socket.on("startSeed", () => {
   store.commit("SET_NEXT_STAGE", {
     name: "GameSeedPhase"
+  });
+});
+
+socket.on("startDrawing", descriptionTitle => {
+  store.commit("SET_NEXT_STAGE", {
+    name: "DrawingPhase",
+    descriptionTitle
   });
 });
 export default store;
