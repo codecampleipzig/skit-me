@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h1>Seed</h1>
+    <div class="instructions">
+      <h2>Come up with an intersting title</h2>
+    </div>
+    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
     <input v-model="descriptionTitle" type="text" />
-    <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
+    <button id="panic-button">Help Me!</button>
   </div>
 </template>
 

@@ -1,9 +1,16 @@
 <template>
   <div>
-    <h1>Drawing</h1>
-    <Timer :timerLengthInMs="8000" ref="timer" @timerfinished="finished" />
-
-    <h2>{{$store.state.currentStage.descriptionTitle || "something went wrong"}}</h2>
+    <div class="instructions">
+      <h2>
+        <span v-if="$store.state.currentStage.descriptionTitle"
+          >Draw this title:<br /></span
+        ><span style="color:red">{{
+          $store.state.currentStage.descriptionTitle ||
+            "The player before you didn't give a title... Draw Something!"
+        }}</span>
+      </h2>
+    </div>
+    <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
     <Canvas width="800" height="600" color="green" ref="canvas" />
   </div>
 </template>
@@ -32,5 +39,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
