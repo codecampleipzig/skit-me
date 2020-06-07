@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-      <router-link to="/"> </router-link>
+    <router-link to="/"> </router-link>
     <router-view />
   </div>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 
 #app {
@@ -21,6 +21,12 @@ body {
   background-image: url(assets/background-image.png);
   background-size: 100%;
   background-attachment: fixed;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 #nav {
@@ -58,16 +64,16 @@ body {
   width: 60%;
   height: 75px;
   margin: 10px auto;
-  border: #D2723A 2px dotted;
+  border: #d2723a 2px dotted;
   border-radius: 5px;
   display: grid;
   align-items: center;
   /* margin-top: 2em; */
 }
 
-.instructions h2{
-margin: 0 auto;
-  }
+.instructions h2 {
+  margin: 0 auto;
+}
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
@@ -84,11 +90,11 @@ margin: 0 auto;
 }
 
 #panic-button {
-background-color: rgb(255, 182, 139);
-font-family: "Secular One", sans-serif;
-font-size: 1.5em;
-color: red;
-border: black 2px solid;
+  background-color: rgb(255, 182, 139);
+  font-family: "Secular One", sans-serif;
+  font-size: 1.5em;
+  color: red;
+  border: black 2px solid;
 }
 
 .startButton {
@@ -110,10 +116,10 @@ border: black 2px solid;
   font-size: 2em;
   font-family: "Secular One", sans-serif;
   color: rgb(0, 0, 0);
- width: 1.5em;
- height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
   display: block;
-  background-color: #D2723A;
+  background-color: #d2723a;
   position: absolute;
   margin: 5px 200px;
   top: 500;
@@ -125,15 +131,14 @@ input {
   display: block;
   width: 753px;
   height: 1em;
- padding: 0 1em;
+  padding: 0 1em;
   margin: 20px auto;
   font-size: 2em;
-  border: black 3px solid ;
+  border: black 3px solid;
 }
 
 .home img {
   width: 250px;
   margin: auto;
 }
-
 </style>

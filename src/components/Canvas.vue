@@ -9,6 +9,9 @@
       @mouseleave="finishDraw"
       @mouseenter="continueDraw"
       @mousemove="draw"
+      @touchstart="touchStart"
+      @touchend="touchEnd"
+      @touchmove="touchMove"
     ></canvas>
   </div>
 </template>
@@ -49,8 +52,10 @@ export default {
   methods: {
     getCanvasPosition(e) {
       const canvasBounds = this.$refs.canvas.getBoundingClientRect();
-      const x = e.clientX - canvasBounds.left;
-      const y = e.clientY - canvasBounds.top;
+      const xRatio = (canvasBounds.right - canvasBounds.left) / 800;
+      const yRatio = (canvasBounds.bottom - canvasBounds.top) / 600;
+      const x = (e.clientX - canvasBounds.left) / xRatio;
+      const y = (e.clientY - canvasBounds.top) / yRatio;
       return { x, y };
     },
     startDraw(e) {
@@ -76,13 +81,32 @@ export default {
       this.painting = false;
     },
     continueDraw(e) {
-      console.log(e);
       if (e.buttons == 1) {
         this.startDraw(e);
       }
     },
+    touchStart(e) {
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      this.ctx.canvas.dispatchEvent(mouseEvent);
+    },
+    touchMove(e) {
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      this.ctx.canvas.dispatchEvent(mouseEvent);
+    },
+    touchEnd() {
+      const mouseEvent = new MouseEvent("mouseup", {});
+      this.ctx.canvas.dispatchEvent(mouseEvent);
+    },
     getImage() {
-      return this.$refs.canvas.toDataURL(); //
+      return this.$refs.canvas.toDataURL();
     }
   }
 };
@@ -92,5 +116,7 @@ export default {
 canvas {
   border: 3px black solid;
   background-color: white;
+  max-width: 80%;
+  width: auto;
 }
 </style>
