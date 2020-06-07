@@ -37,6 +37,11 @@ const store = new Vuex.Store({
     }
   },
   actions: {
+    async startGame() {
+      const res = await axios.post("http://localhost:1234/rooms");
+      console.log(res.data);
+      router.push({ name: "JoinRoom", params: { roomId: res.data.roomId } });
+    },
     joinRoom(ctx, { roomId, userName }) {
       socket.emit("joinRoom", { userName, roomId }, response => {
         console.log(response);
@@ -52,16 +57,8 @@ const store = new Vuex.Store({
     roomUpdate(ctx, room) {
       ctx.commit("SET_ROOM", room);
     },
-    restartGame(ctx) {
-      ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
-    },
-    async startGame() {
-      const res = await axios.post("http://localhost:1234/rooms");
-      console.log(res.data);
-      router.push({ name: "JoinRoom", params: { roomId: res.data.roomId } });
-    },
-    completePlayerLobby(ctx) {
-      ctx.commit("SET_NEXT_STAGE", { name: "GameSeedPhase" });
+    signalReady() {
+      socket.emit("signalReady");
     },
     completeSeed({ commit }, descriptionTitle) {
       commit("PUSH_NEW_RESULT", { type: "descriptionTitle", descriptionTitle });
@@ -93,12 +90,20 @@ const store = new Vuex.Store({
       } else {
         ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
       }
+    },
+    restartGame(ctx) {
+      ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
     }
-  },
-  modules: {}
+  }
 });
 
 socket.on("roomUpdate", room => {
   store.dispatch("roomUpdate", room);
+});
+
+socket.on("startSeed", () => {
+  store.commit("SET_NEXT_STAGE", {
+    name: "GameSeedPhase"
+  });
 });
 export default store;

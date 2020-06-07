@@ -8,6 +8,7 @@
       {{ player.userName }}
     </p>
     <p>http://localhost:8080/join/{{ room.roomId }}</p>
+    <button @click="signalReady">I'm ready - let's play!</button>
   </div>
 </template>
 
@@ -20,8 +21,8 @@ export default {
   },
 
   methods: {
-    finished() {
-      this.$store.dispatch("completePlayerLobby");
+    signalReady() {
+      this.$store.dispatch("signalReady");
     }
   }
 };
