@@ -64,31 +64,10 @@ const store = new Vuex.Store({
       socket.emit("completeWriting", descriptionTitle);
     },
     completeDrawing(ctx, drawingURL) {
-      //later from here we'll call a database witch the drawingURL to pass the drawing
-      ctx.commit("PUSH_NEW_RESULT", { type: "drawing", drawingURL });
-      if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
-        ctx.commit("SET_NEXT_STAGE", {
-          name: "WritingPhase",
-          drawingURL
-        });
-      } else {
-        ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
-      }
+      socket.emit("completeDrawing", drawingURL);
     },
     completeWriting(ctx, descriptionTitle) {
-      //later from here we'll call a database witch the drawingURL to pass the drawing
-      ctx.commit("PUSH_NEW_RESULT", {
-        type: "descriptionTitle",
-        descriptionTitle
-      });
-      if (ctx.state.results.length < ctx.state.gameParameters.numRounds) {
-        ctx.commit("SET_NEXT_STAGE", {
-          name: "DrawingPhase",
-          descriptionTitle
-        });
-      } else {
-        ctx.commit("SET_NEXT_STAGE", { name: "GameEndPhase" });
-      }
+      socket.emit("completeWriting", descriptionTitle);
     },
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
@@ -110,6 +89,13 @@ socket.on("startDrawing", descriptionTitle => {
   store.commit("SET_NEXT_STAGE", {
     name: "DrawingPhase",
     descriptionTitle
+  });
+});
+
+socket.on("startWriting", drawingURL => {
+  store.commit("SET_NEXT_STAGE", {
+    name: "WritingPhase",
+    drawingURL
   });
 });
 export default store;
