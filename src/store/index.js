@@ -13,8 +13,6 @@ const store = new Vuex.Store({
     currentStage: {
       name: "StartScreen"
     },
-    gameParameters: null,
-    results: [],
     room: null
   },
   mutations: {
@@ -24,16 +22,6 @@ const store = new Vuex.Store({
     },
     SET_ROOM(state, room) {
       state.room = room;
-    },
-
-    SETUP_GAME(state, gameParameters) {
-      //parameter stage is a stage object as defined in line 8
-      state.gameParameters = gameParameters;
-      state.results = [];
-    },
-    PUSH_NEW_RESULT(state, result) {
-      //result data coming from the last stage either sentence or drawingURL
-      state.results.push(result);
     }
   },
   actions: {
@@ -70,7 +58,7 @@ const store = new Vuex.Store({
       socket.emit("completeWriting", descriptionTitle);
     },
     restartGame(ctx) {
-      ctx.commit("SET_NEXT_STAGE", { name: "StartScreen" });
+      ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
     }
   }
 });
@@ -96,6 +84,13 @@ socket.on("startWriting", drawingURL => {
   store.commit("SET_NEXT_STAGE", {
     name: "WritingPhase",
     drawingURL
+  });
+});
+
+socket.on("endGame", results => {
+  store.commit("SET_NEXT_STAGE", {
+    name: "GameEndPhase",
+    results
   });
 });
 export default store;
