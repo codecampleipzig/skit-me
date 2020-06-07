@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <img alt="SkitMe Logo" src="../assets/skitmelogo.svg" />
-    <component :is="activeComponent"></component>
+    <transition name="slide">
+      <component :is="activeComponent"></component>
+    </transition>
   </div>
 </template>
 
@@ -22,12 +24,31 @@ export default {
     GameSeedPhase,
     DrawingPhase,
     WritingPhase,
-    GameEndPhase,
+    GameEndPhase
   },
   computed: {
     activeComponent() {
       return this.$store.state.currentStage.name;
-    },
-  },
+    }
+  }
 };
 </script>
+
+<style scoped>
+.slide-enter {
+  transform: translateX(-100vw);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 1s;
+}
+
+.slide-leave-active {
+  position: absolute;
+}
+
+.slide-leave-to {
+  transform: translateX(100vw);
+}
+</style>

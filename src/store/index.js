@@ -11,7 +11,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen"
+      name: "GameSeedPhase"
     },
     gameParameters: null,
     results: [],
