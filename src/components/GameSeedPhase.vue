@@ -4,7 +4,7 @@
       <h2>Come up with an intersting title</h2>
     </div>
     <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
-    <input v-model="descriptionTitle" type="text" />
+    <input class="slide-out" v-model="descriptionTitle" type="text" />
     <button id="panic-button">Help Me!</button>
   </div>
 </template>

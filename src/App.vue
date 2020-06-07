@@ -62,6 +62,8 @@ body {
   border-radius: 5px;
   display: grid;
   align-items: center;
+animation: fadeIn 0.7s ease;
+
   /* margin-top: 2em; */
 }
 
@@ -131,9 +133,54 @@ input {
   border: black 3px solid ;
 }
 
-.home img {
+.logo {
+ width: 250px;
+  margin: auto;
+}
+
+img:not(.logo) {
   width: 250px;
   margin: auto;
+  animation: slideIn .7s ease-in-out;
+  border: saddlebrown 2px solid;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: skewX(30deg) translateX(-500px);
+    opacity: 0;
+    }
+    60% {
+      transform: translateX(0px);
+      scale: 100%
+    }
+    62% {
+      transform: skewX(0deg) translateX(30px);
+    }
+    70% {
+      transform: skew(-20deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skew(0deg) translate(0);
+    }
+    90% {
+      transform: skew(-5deg);
+    }
+    100% {
+transform: skewX(0deg)
+      }
+}
+
+@keyframes fadeIn {
+0% {
+transform: translateY(-50px);
+opacity: 0;
+}
+100% {
+transform: translate(0);
+opacity: 1;
+}
 }
 
 </style>
