@@ -1,32 +1,18 @@
 <template>
-  <div class="home">
-    <img id="logo" alt="SkitMe Logo" src="../assets/skitmelogo.svg" />
-    <component :is="activeComponent"></component>
+  <div>
+    <button @click="startGame">start game</button>
+    <h1>Start</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import StartScreen from "@/components/StartScreen.vue";
-import GameSeedPhase from "@/components/GameSeedPhase.vue";
-import DrawingPhase from "@/components/DrawingPhase.vue";
-import WritingPhase from "@/components/WritingPhase.vue";
-import GameEndPhase from "@/components/GameEndPhase.vue";
-
 export default {
-  name: "Home",
-
-  components: {
-    StartScreen,
-    GameSeedPhase,
-    DrawingPhase,
-    WritingPhase,
-    GameEndPhase
-  },
-  computed: {
-    activeComponent() {
-      return this.$store.state.currentStage.name;
+  methods: {
+    startGame() {
+      this.$store.dispatch("startGame", { numRounds: 5 });
     }
   }
 };
 </script>
+
+<style lang="scss" scoped></style>
