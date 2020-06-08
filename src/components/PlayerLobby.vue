@@ -1,4 +1,30 @@
-// Waiting are before game starts // Change of input parameters like: // -
-Number of players wanted for game // - Timer settings for normal, speedy, lazy
-round // Calculated game time based on Number of players * Timer settings //
-Input field for player name
+<template>
+  <div>
+    <p>Welcome to the Player Lobby</p>
+    <p
+      :key="index"
+      v-for="(player, index) in room.players.filter(player => player.connected)"
+    >
+      {{ player.userName }}
+    </p>
+    <p>http://localhost:8080/join/{{ room.roomId }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    room() {
+      return this.$store.state.room;
+    }
+  },
+
+  methods: {
+    finished() {
+      this.$store.dispatch("completePlayerLobby");
+    }
+  }
+};
+</script>
+
+<style scoped></style>
