@@ -3,8 +3,16 @@
     <div class="instructions">
       <h2>Come up with an intersting title</h2>
     </div>
-    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
-    <input v-model="descriptionTitle" type="text" />
+    <div class="timer-phase-container">
+      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
+      <div class="interaction">
+        <input
+          v-model="descriptionTitle"
+          type="text"
+          placeholder="A cookie drank my milk"
+        />
+      </div>
+    </div>
     <button id="panic-button">Help Me!</button>
   </div>
 </template>
@@ -31,5 +39,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

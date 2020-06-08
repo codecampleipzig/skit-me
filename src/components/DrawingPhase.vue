@@ -10,8 +10,12 @@
         }}</span>
       </h2>
     </div>
-    <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
-    <Canvas width="800" height="600" color="green" ref="canvas" />
+    <div class="timer-phase-container">
+      <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
+      <div class="interaction">
+        <Canvas width="800" height="600" color="green" ref="canvas" />
+      </div>
+    </div>
   </div>
 </template>
 

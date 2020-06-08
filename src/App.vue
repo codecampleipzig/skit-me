@@ -9,6 +9,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 
+:root {
+  --light-yellow-background: #e4d178;
+  --main-font-color: #433c48;
+  --orange: #e19a59;
+  --dark-blue: #587783;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -59,11 +66,11 @@ body {
 .instructions {
   font-family: "Indie Flower", cursive;
   background-color: rgb(253, 253, 226);
-  size: 1em;
+  font-size: 1.3vw;
   text-align: center;
   width: 60%;
   height: 75px;
-  margin: 10px auto;
+  margin: 2em auto;
   border: #d2723a 2px dotted;
   border-radius: 5px;
   display: grid;
@@ -112,6 +119,18 @@ body {
   cursor: pointer;
 }
 
+.timer-phase-container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: auto;
+  grid-template-areas: "timer interaction .";
+}
+
+.interaction {
+  grid-area: interaction;
+  justify-content: center;
+}
+
 .countdown {
   font-size: 2em;
   font-family: "Secular One", sans-serif;
@@ -120,25 +139,29 @@ body {
   height: 1.5em;
   display: block;
   background-color: #d2723a;
-  position: absolute;
-  margin: 5px 200px;
-  top: 500;
   border: black 3px solid;
   border-radius: 50%;
+  grid-area: timer;
+  justify-self: right;
 }
 
 input {
   display: block;
   width: 753px;
   height: 1em;
-  padding: 0 1em;
-  margin: 20px auto;
+  padding: 0.3em 1em;
+  margin: auto;
   font-size: 2em;
   border: black 3px solid;
 }
 
-.home img {
-  width: 250px;
-  margin: auto;
+::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 0.2; /* Firefox */
+}
+
+#logo {
+  width: 25vw;
+  margin: 10px auto;
 }
 </style>
