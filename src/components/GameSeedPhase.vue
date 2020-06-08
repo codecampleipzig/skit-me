@@ -2,7 +2,7 @@
   <div>
     <h1>Seed</h1>
     <input v-model="descriptionTitle" type="text" />
-    <Timer :timerLengthInMs="10000" ref="timer" @timerfinished="finished" />
+    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
   </div>
 </template>
 
