@@ -19,6 +19,7 @@ const store = new Vuex.Store({
     SET_NEXT_STAGE(state, stage) {
       //parameter stage is a stage object as defined in line 8
       state.currentStage = stage;
+      console.log(state.currentStage);
     },
     SET_ROOM(state, room) {
       state.room = room;
@@ -48,14 +49,26 @@ const store = new Vuex.Store({
     signalReady() {
       socket.emit("signalReady");
     },
-    completeSeed(ctx, descriptionTitle, sheetId) {
-      socket.emit("completeWriting", descriptionTitle, sheetId);
+    completeSeed(ctx, descriptionTitle) {
+      socket.emit(
+        "completeWriting",
+        descriptionTitle,
+        this.state.currentStage.sheetId
+      );
     },
-    completeDrawing(ctx, drawingURL, sheetId) {
-      socket.emit("completeDrawing", drawingURL, sheetId);
+    completeDrawing(ctx, drawingURL) {
+      socket.emit(
+        "completeDrawing",
+        drawingURL,
+        this.state.currentStage.sheetId
+      );
     },
-    completeWriting(ctx, descriptionTitle, sheetId) {
-      socket.emit("completeWriting", descriptionTitle, sheetId);
+    completeWriting(ctx, descriptionTitle) {
+      socket.emit(
+        "completeWriting",
+        descriptionTitle,
+        this.state.currentStage.sheetId
+      );
     },
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
@@ -68,6 +81,7 @@ socket.on("roomUpdate", (room) => {
 });
 
 socket.on("startSeed", (sheetId) => {
+  console.log(sheetId);
   store.commit("SET_NEXT_STAGE", {
     name: "GameSeedPhase",
     sheetId,
@@ -75,7 +89,7 @@ socket.on("startSeed", (sheetId) => {
 });
 
 socket.on("startDrawing", (descriptionTitle, sheetId) => {
-  console.log(sheetId);
+  console.log("socket ON start drawing SheetId: " + sheetId);
   store.commit("SET_NEXT_STAGE", {
     name: "DrawingPhase",
     descriptionTitle,
@@ -91,10 +105,11 @@ socket.on("startWriting", (drawingURL, sheetId) => {
   });
 });
 
-socket.on("endGame", (results) => {
+socket.on("endGame", (results, sheets) => {
   store.commit("SET_NEXT_STAGE", {
     name: "GameEndPhase",
     results,
+    sheets,
   });
 });
 export default store;

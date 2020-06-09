@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h2 class="instructions">How would you describe this drawing?<br>Give it a title!</h2>
-    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
-    <input v-model="descriptionTitle" type="text" /> <br>
+    <h2 class="instructions">
+      How would you describe this drawing?
+      <br />Give it a title!
+    </h2>
+    <Timer :timerLengthInMs="10000" ref="timer" @timerfinished="finished" />
+    <input v-model="descriptionTitle" type="text" />
+    <br />
     <img :src="$store.state.currentStage.drawingURL" />
   </div>
 </template>
