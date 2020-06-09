@@ -11,7 +11,7 @@
       </h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <Canvas width="800" height="600" color="green" ref="canvas" />
       </div>
@@ -25,11 +25,11 @@ import Canvas from "@/components/Canvas.vue";
 export default {
   components: {
     Canvas,
-    Timer
+    Timer,
   },
   data() {
     return {
-      descriptionTitle: ""
+      descriptionTitle: "",
     };
   },
   mounted() {
@@ -38,8 +38,8 @@ export default {
   methods: {
     finished() {
       this.$store.dispatch("completeDrawing", this.$refs.canvas.getImage());
-    }
-  }
+    },
+  },
 };
 </script>
 
