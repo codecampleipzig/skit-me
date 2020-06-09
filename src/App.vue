@@ -77,6 +77,16 @@ body {
   align-items: center;
   /* margin-top: 2em; */
 }
+.tagline {
+  font-family: "Indie Flower", cursive;
+  font-weight: bold;
+  color: darkblue;
+  font-size: 2.5vw;
+  text-align: center;
+  margin: 1em auto;
+  align-items: center;
+  /* margin-top: 2em; */
+}
 
 .instructions h2 {
   margin: 0 auto;
