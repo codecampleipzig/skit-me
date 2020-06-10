@@ -3,7 +3,7 @@
     <h1>Invite your Friends!</h1>
     <h2>We recommend 4-10 players</h2>
     <div style="display:flex; justify-content:center; align-items:center">
-      <p id="linkToRoom">http://localhost:8080/join/{{ room.roomId }}</p>
+      <p id="linkToRoom">{{ url }}/join/{{ room.roomId }}</p>
       <button class="copyButton" @click="copyLink()" type="submit">
         Copy Link
       </button>
@@ -38,7 +38,17 @@ export default {
   computed: {
     room() {
       return this.$store.state.room;
-    }
+    },
+  },
+  data: () => {
+    return {
+      url:
+        window.location.protocol +
+        "//" +
+        window.location.hostname +
+        ":" +
+        window.location.port,
+    };
   },
 
   methods: {
@@ -58,8 +68,8 @@ export default {
 
       /* Alert the copied text */
       alert("Copied the text: " + copyText.value);
-    }
-  }
+    },
+  },
 };
 </script>
 
