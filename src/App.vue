@@ -16,6 +16,19 @@
   --dark-blue: #587783;
 }
 
+@media (max-width: 500px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+.interaction {
+  font-family: "Indie Flower", cursive;
+  font-size: 3em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,9 +38,10 @@
 }
 
 body {
-  background-image: url(assets/background-image.png);
-  background-size: 100%;
-  background-attachment: fixed;
+  background-image: url(assets/paper-background.png);
+  background-size: cover;
+  background-attachment: local;
+  background-repeat: repeat-y;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -36,8 +50,36 @@ body {
   user-select: none;
 }
 
+h1 {
+  font-family: "Secular One", sans-serif;
+  font-size: 3em;
+  color: #2c3e50;
+}
+
+h2 {
+  font-family: "Secular One", sans-serif;
+  font-size: 1.8em;
+  color: #2c3e50;
+}
+
 #nav {
   padding: 30px;
+}
+
+#linkToRoom {
+  border: #2c3e50 3px solid;
+  background-color: rgb(255, 255, 255);
+  margin: 1em 1em 2em 1em;
+  padding: 5px 5px;
+  width: 40%;
+  font-family: "Secular One", sans-serif;
+  font-size: 1.3em;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: all;
 }
 
 #nav a {
@@ -47,20 +89,6 @@ body {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
-
-.playerName {
-  font-family: "Indie Flower", cursive;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1.7em;
-  background-color: #f7b501;
-  color: white;
-  padding: 12px 32px;
-  display: block;
-  width: 30%;
-  margin: 10px auto;
-  margin-top: 2em;
 }
 
 .instructions {
@@ -96,15 +124,38 @@ body {
   margin-top: 2em;
 }
 
-#panic-button {
-  background-color: rgb(255, 182, 139);
-  font-family: "Secular One", sans-serif;
-  font-size: 1.5em;
-  color: red;
-  border: black 2px solid;
+.playerNames {
+  font-family: "Indie Flower", cursive;
+  font-size: 3em;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  width: 70vw;
+  align-content: center;
+  margin: auto;
+}
+
+.playerNames p {
+  margin: 0 30px 30px 30px;
 }
 
 .startButton {
+  background-color: #008080;
+  color: white;
+  font-family: "Secular One", sans-serif;
+  font-size: 2em;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.copyButton {
   background-color: #008080;
   color: white;
   font-family: "Secular One", sans-serif;
@@ -147,10 +198,10 @@ body {
 
 input {
   display: block;
-  width: 753px;
+  width: 50vw;
   height: 1em;
   padding: 0.3em 1em;
-  margin: auto;
+  margin: 1em auto 1.5em;
   font-size: 2em;
   border: black 3px solid;
 }
@@ -163,5 +214,55 @@ input {
 #logo {
   width: 25vw;
   margin: 10px auto;
+}
+
+#footer-links {
+  display: flex;
+  justify-content: center;
+  height: 0em;
+}
+
+#footer-links a {
+  margin: 0 3em;
+}
+
+.footer-content {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+#contact:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:hover {
+  color: blue;
+}
+
+footer img {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 10vh;
+  bottom: 0;
+  z-index: -1;
+}
+
+footer {
+  display: grid;
+  height: 10vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  font-size: 2em;
 }
 </style>

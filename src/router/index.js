@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import JoinRoom from "../views/JoinRoom.vue";
 import Room from "../views/Room.vue";
 import store from "@/store";
+import GameEndPhase from "@/components/GameEndPhase.vue";
 
 Vue.use(VueRouter);
 
@@ -11,13 +12,17 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+  },
+  {
+    path: "/test",
+    component: GameEndPhase,
   },
   {
     path: "/join/:roomId",
     name: "JoinRoom",
     component: JoinRoom,
-    props: true
+    props: true,
   },
   {
     path: "/room/:roomId",
@@ -30,14 +35,14 @@ const routes = [
       } else {
         next();
       }
-    }
-  }
+    },
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;
