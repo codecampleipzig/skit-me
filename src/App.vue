@@ -16,6 +16,13 @@
   --dark-blue: #587783;
 }
 
+.interaction {
+  font-family: "Indie Flower", cursive;
+  font-size: 3em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,8 +32,8 @@
 }
 
 body {
-  background-image: url(assets/background-image.png);
-  background-size: 100%;
+  background-image: url(assets/paper-background.png);
+  background-size: 100vw;
   background-attachment: fixed;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -163,5 +170,40 @@ input {
 #logo {
   width: 25vw;
   margin: 10px auto;
+}
+
+#footer-links {
+  display: flex;
+  justify-content: center;
+  height: 0em;
+}
+
+#footer-links p {
+  margin: 0 3em;
+}
+
+#disclaimer {
+  padding: 0;
+  margin-bottom: -5em;
+  margin-top: 0;
+  width: 100%;
+}
+
+.footer-content {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+footer {
+  display: grid;
+  height: 15vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  font-size: 2em;
+  background-image: url("assets/note-footer.png");
+  background-size: cover;
 }
 </style>

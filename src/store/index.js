@@ -11,9 +11,9 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen"
+      name: "StartScreen",
     },
-    room: null
+    room: null,
   },
   mutations: {
     SET_NEXT_STAGE(state, stage) {
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
     },
     SET_ROOM(state, room) {
       state.room = room;
-    }
+    },
   },
   actions: {
     async startGame() {
@@ -31,7 +31,7 @@ const store = new Vuex.Store({
       router.push({ name: "JoinRoom", params: { roomId: res.data.roomId } });
     },
     joinRoom(ctx, { roomId, userName }) {
-      socket.emit("joinRoom", { userName, roomId }, response => {
+      socket.emit("joinRoom", { userName, roomId }, (response) => {
         console.log(response);
         if (response.error) {
           console.error(response.error);
@@ -59,38 +59,38 @@ const store = new Vuex.Store({
     },
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
-    }
-  }
+    },
+  },
 });
 
-socket.on("roomUpdate", room => {
+socket.on("roomUpdate", (room) => {
   store.dispatch("roomUpdate", room);
 });
 
 socket.on("startSeed", () => {
   store.commit("SET_NEXT_STAGE", {
-    name: "GameSeedPhase"
+    name: "GameSeedPhase",
   });
 });
 
-socket.on("startDrawing", descriptionTitle => {
+socket.on("startDrawing", (descriptionTitle) => {
   store.commit("SET_NEXT_STAGE", {
     name: "DrawingPhase",
-    descriptionTitle
+    descriptionTitle,
   });
 });
 
-socket.on("startWriting", drawingURL => {
+socket.on("startWriting", (drawingURL) => {
   store.commit("SET_NEXT_STAGE", {
     name: "WritingPhase",
-    drawingURL
+    drawingURL,
   });
 });
 
-socket.on("endGame", results => {
+socket.on("endGame", (results) => {
   store.commit("SET_NEXT_STAGE", {
     name: "GameEndPhase",
-    results
+    results,
   });
 });
 export default store;
