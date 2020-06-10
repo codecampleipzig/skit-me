@@ -5,7 +5,7 @@
     <button @click="restartGame">Start a new Game</button>
 
     <div
-      v-for="(sheets, index) in $store.state.currentStage.results"
+      v-for="(sheets, index) in $store.state.currentStage.sheets"
       :key="index"
       style="display: flex; flex-direction:column"
     >
