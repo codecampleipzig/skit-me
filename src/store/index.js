@@ -4,16 +4,16 @@ import axios from "axios";
 import router from "@/router";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:1234");
+const socket = io("localhost:8080");
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
     currentStage: {
-      name: "StartScreen"
+      name: "StartScreen",
     },
-    room: null
+    room: null,
   },
   mutations: {
     SET_NEXT_STAGE(state, stage) {
@@ -23,7 +23,7 @@ const store = new Vuex.Store({
     },
     SET_ROOM(state, room) {
       state.room = room;
-    }
+    },
   },
   actions: {
     async startGame() {
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
       router.push({ name: "JoinRoom", params: { roomId: res.data.roomId } });
     },
     joinRoom(ctx, { roomId, userName }) {
-      socket.emit("joinRoom", { userName, roomId }, response => {
+      socket.emit("joinRoom", { userName, roomId }, (response) => {
         console.log(response);
         if (response.error) {
           console.error(response.error);
@@ -72,19 +72,19 @@ const store = new Vuex.Store({
     },
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
-    }
-  }
+    },
+  },
 });
 
-socket.on("roomUpdate", room => {
+socket.on("roomUpdate", (room) => {
   store.dispatch("roomUpdate", room);
 });
 
-socket.on("startSeed", sheetId => {
+socket.on("startSeed", (sheetId) => {
   console.log(sheetId);
   store.commit("SET_NEXT_STAGE", {
     name: "GameSeedPhase",
-    sheetId
+    sheetId,
   });
 });
 
@@ -93,7 +93,7 @@ socket.on("startDrawing", (descriptionTitle, sheetId) => {
   store.commit("SET_NEXT_STAGE", {
     name: "DrawingPhase",
     descriptionTitle,
-    sheetId
+    sheetId,
   });
 });
 
@@ -101,7 +101,7 @@ socket.on("startWriting", (drawingURL, sheetId) => {
   store.commit("SET_NEXT_STAGE", {
     name: "WritingPhase",
     drawingURL,
-    sheetId
+    sheetId,
   });
 });
 
@@ -195,7 +195,7 @@ socket.on("endGame", (results, sheets) => {
   store.commit("SET_NEXT_STAGE", {
     name: "GameEndPhase",
     results,
-    sheets
+    sheets,
   });
 });
 export default store;
