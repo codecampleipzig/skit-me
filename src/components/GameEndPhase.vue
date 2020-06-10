@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>The End</h1>
-    <p>{{ $store.state.currentStage.results }}</p>
+
     <button @click="restartGame">Start a new Game</button>
-    <div v-for="(result, index) in $store.state.results" :key="index">
-      <img v-if="result.type == 'drawing'" :src="result.drawingURL" />
-      <h2 v-else>{{ result.user.userName }}</h2>
+    <div v-for="(sheet, index) in $store.state.currentStage.results" :key="index">
+      <div v-for="(result, index) in sheet" :key="index">
+        <img v-if="result.type == 'drawing' " :src="result.content" />
+        <h2 v-else>{{ result.content }}</h2>
+      </div>
     </div>
   </div>
 </template>
