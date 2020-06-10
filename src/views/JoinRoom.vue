@@ -1,9 +1,27 @@
 <template>
   <div>
+    <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
+    <br />
     <form @submit.prevent="submit">
-      <input v-model.trim="username" type="text" placeholder="type username" />
-      <button type="submit">join</button>
+      <input
+        v-model.trim="username"
+        type="text"
+        placeholder="What's your Name?"
+        maxlength="10"
+      />
+      <button type="submit" class="startButton">Join the Game</button>
     </form>
+    <p class="interaction">
+      Inventing a story together<br />has never been more fun!
+    </p>
+    <footer>
+      <div id="footer-links">
+        <a href="https://codecampleipzig.de/impressum.html">Imprint</a>
+        <a href="https://codecampleipzig.de/impressum.html"
+          >Privacy statement</a
+        >
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -13,15 +31,15 @@ export default {
     submit() {
       this.$store.dispatch("joinRoom", {
         userName: this.username,
-        roomId: this.$route.params.roomId,
+        roomId: this.$route.params.roomId
       });
-    },
+    }
   },
   data() {
     return {
-      username: "",
+      username: ""
     };
-  },
+  }
 };
 </script>
 

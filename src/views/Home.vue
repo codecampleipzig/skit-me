@@ -2,22 +2,18 @@
   <div>
     <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
     <br />
-    <button @click="startGame" class="startButton">start game</button>
+    <button @click="startGame" class="startButton">Start Game</button>
     <p class="interaction">
       Inventing a story together<br />has never been more fun!
     </p>
     <footer>
       <div id="footer-links">
-        <p>About</p>
-        <p id="contact" onclick="window.open('mailto:tlevin8@gmail.com');">
-          Contact me
-        </p>
-        <p>Terms</p>
+        <a href="https://codecampleipzig.de/impressum.html">Imprint</a>
+        <a href="https://codecampleipzig.de/impressum.html"
+          >Privacy statement</a
+        >
       </div>
-      <p id="disclaimer" style="line-height: 1em">
-        **We are not responsible for any user generated content (drawings,
-        messages, usernames)**
-      </p>
+      <img src="../assets/footer-note.svg" alt="" />
     </footer>
   </div>
 </template>
@@ -32,9 +28,4 @@ export default {
 };
 </script>
 
-<style scoped>
-#contact:hover {
-  color: blue;
-  cursor: pointer;
-}
-</style>
+<style scoped></style>
