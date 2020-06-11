@@ -9,7 +9,7 @@
         placeholder="What's your Name?"
         maxlength="10"
       />
-      <button type="submit" class="startButton">Join the Game</button>
+      <button type="submit" class="bigButton">Join the Game</button>
     </form>
     <p class="interaction">
       Inventing a story together<br />has never been more fun!

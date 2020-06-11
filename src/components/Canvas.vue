@@ -44,7 +44,7 @@ export default {
   },
   mounted() {
     this.ctx = this.$refs.canvas.getContext("2d");
-    this.ctx.lineWidth = 10;
+    this.ctx.lineWidth = 7;
     this.ctx.lineCap = "round";
     this.ctx.lineJoin = "round";
     this.ctx.strokeStyle = this.color;

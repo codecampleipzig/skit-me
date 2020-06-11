@@ -1,10 +1,11 @@
 <template>
   <div>
+    <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
     <h1>Invite your Friends!</h1>
     <h2>We recommend 4-10 players</h2>
     <div style="display:flex; justify-content:center; align-items:center">
       <p id="linkToRoom">{{ url }}/join/{{ room.roomId }}</p>
-      <button class="copyButton" @click="copyLink()" type="submit">
+      <button class="smallButton" @click="copyLink()" type="submit">
         Copy Link
       </button>
     </div>
@@ -27,7 +28,7 @@
       <p>1234567890</p>
       <p>1234567890</p>
     </div>
-    <button class="startButton" @click="signalReady">
+    <button class="bigButton" @click="signalReady">
       We're all in, let's start!
     </button>
   </div>
@@ -38,7 +39,7 @@ export default {
   computed: {
     room() {
       return this.$store.state.room;
-    },
+    }
   },
   data: () => {
     return {
@@ -47,7 +48,7 @@ export default {
         "//" +
         window.location.hostname +
         ":" +
-        window.location.port,
+        window.location.port
     };
   },
 
@@ -68,8 +69,8 @@ export default {
 
       /* Alert the copied text */
       alert("Copied the text: " + copyText.value);
-    },
-  },
+    }
+  }
 };
 </script>
 

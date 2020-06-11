@@ -2,7 +2,7 @@
   <div>
     <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
     <br />
-    <button @click="startGame" class="startButton">Start Game</button>
+    <button @click="startGame" class="bigButton">Start Game</button>
     <p class="interaction">
       Inventing a story together<br />has never been more fun!
     </p>

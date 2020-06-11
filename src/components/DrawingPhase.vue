@@ -13,7 +13,7 @@
     <div class="timer-phase-container">
       <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
-        <Canvas width="800" height="600" color="green" ref="canvas" />
+        <Canvas width="800" height="600" ref="canvas" />
       </div>
     </div>
   </div>

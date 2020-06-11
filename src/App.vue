@@ -61,6 +61,11 @@ h2 {
   font-size: 1.8em;
   color: #2c3e50;
 }
+h3 {
+  font-family: "Secular One", sans-serif;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
 
 #nav {
   padding: 30px;
@@ -129,9 +134,9 @@ h2 {
   font-size: 3em;
   font-weight: bold;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto;
-  width: 70vw;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  max-width: 70vw;
   align-content: center;
   margin: auto;
 }
@@ -140,7 +145,7 @@ h2 {
   margin: 0 30px 30px 30px;
 }
 
-.startButton {
+.bigButton {
   background-color: #008080;
   color: white;
   font-family: "Secular One", sans-serif;
@@ -155,7 +160,7 @@ h2 {
   cursor: pointer;
 }
 
-.copyButton {
+.smallButton {
   background-color: #008080;
   color: white;
   font-family: "Secular One", sans-serif;
@@ -253,6 +258,33 @@ footer img {
   height: 10vh;
   bottom: 0;
   z-index: -1;
+}
+
+.sheets-container {
+  display: grid;
+  /* grid-template-columns: auto auto; */
+  grid-gap: calc(20px / 2);
+  grid-template-columns: repeat(8, calc(50% - 20px * 2));
+  padding: 0 20px;
+  overflow-x: hidden;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(0.75 * 20px);
+  margin-bottom: calc(-0.25 * 20px);
+}
+
+.sheet-item {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  margin-right: 20px;
+}
+
+.sheet-column {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: auto;
 }
 
 footer {

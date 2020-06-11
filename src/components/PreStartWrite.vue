@@ -6,7 +6,7 @@
       out!
       <Timer :timerLengthInMs="2000" ref="timer" @timerfinished="finished" />
     </p>
-    <button class="startButton" type="submit" @click="start" v-if="!hasStarted">
+    <button class="bigButton" type="submit" @click="start" v-if="!hasStarted">
       Start the Game
     </button>
     <input class="newTitleInput" type="text" />
