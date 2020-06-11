@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="instructions">
-      <h2>Come up with an intersting title</h2>
+    <div>
+      <h2 class="instructions">Create a Title, anything! Really!</h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="20000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <input
           v-model="descriptionTitle"
@@ -13,7 +13,6 @@
         />
       </div>
     </div>
-    <button id="panic-button">Help Me!</button>
   </div>
 </template>
 
@@ -39,4 +38,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

@@ -1,21 +1,24 @@
 <template>
   <div>
-    <div class="instructions">
+    <div>
       <h2>
-        <span v-if="$store.state.currentStage.descriptionTitle">
-          Draw this title:
+        <span
+          class="instructions"
+          v-if="$store.state.currentStage.descriptionTitle"
+        >
+          Draw this title!
           <br />
         </span>
-        <span style="color:red">
+        <span class="drawThisTitle">
           {{
-          $store.state.currentStage.descriptionTitle ||
-          "The player before you didn't give a title... Draw Something!"
+            $store.state.currentStage.descriptionTitle ||
+              "The player before you wasn't creative... So you can draw anything you like!"
           }}
         </span>
       </h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="10000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="25000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <Canvas width="800" height="600" color="black" ref="canvas" />
       </div>

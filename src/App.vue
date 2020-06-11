@@ -97,18 +97,15 @@ h3 {
 }
 
 .instructions {
-  font-family: "Indie Flower", cursive;
-  background-color: rgb(253, 253, 226);
-  font-size: 1.3vw;
+  font-family: "Secular One", sans-serif;
+  color: #008080;
+  font-size: 1.7em;
   text-align: center;
   width: 60%;
   height: 75px;
   margin: 2em auto;
-  border: #d2723a 2px dotted;
-  border-radius: 5px;
   display: grid;
   align-items: center;
-  /* margin-top: 2em; */
 }
 
 .instructions h2 {
@@ -117,16 +114,12 @@ h3 {
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: bold;
   line-height: 1.7em;
-  background-color: #f7b501;
-  color: rgb(63, 62, 62);
-  padding: 12px;
-  display: block;
-  width: 800px;
-  margin: 10px auto;
-  margin-top: 2em;
+  /* color still needs to change, it clashes with the petrol */
+  color: #ee724b;
+  max-width: 50vw;
 }
 
 .playerNames {
@@ -190,12 +183,11 @@ h3 {
 .countdown {
   font-size: 2em;
   font-family: "Secular One", sans-serif;
-  color: rgb(0, 0, 0);
+  color: #2c3e50;
   width: 1.5em;
   height: 1.5em;
   display: block;
-  background-color: #d2723a;
-  border: black 3px solid;
+  background-color: #ffc24b;
   border-radius: 50%;
   grid-area: timer;
   justify-self: right;
@@ -207,8 +199,18 @@ input {
   height: 1em;
   padding: 0.3em 1em;
   margin: 1em auto 1.5em;
-  font-size: 2em;
-  border: black 3px solid;
+  font-size: 1.7em;
+  color: #2c3e50;
+  border: #2c3e50 3px solid;
+}
+
+#logoMain {
+  width: 50%;
+}
+
+#logo {
+  width: 25vw;
+  margin: 10px auto;
 }
 
 ::placeholder {
@@ -216,10 +218,6 @@ input {
   opacity: 0.2; /* Firefox */
 }
 
-#logo {
-  width: 25vw;
-  margin: 10px auto;
-}
 
 #footer-links {
   display: flex;

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
     <h1>Invite your Friends!</h1>
     <h2>We recommend 4-10 players</h2>
     <div style="display:flex; justify-content:center; align-items:center">

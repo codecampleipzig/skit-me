@@ -3,11 +3,6 @@
     <div
       style="display: flex; align-items: center; justify-content: space-between; "
     >
-      <img
-        src="../assets/static-logo.png"
-        alt="SkitMe Logo"
-        style="width: 20%"
-      />
       <button class="smallButton" @click="restartGame">Start a new Game</button>
     </div>
     <img
