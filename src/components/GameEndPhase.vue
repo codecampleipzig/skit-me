@@ -1,10 +1,20 @@
 <template>
   <div>
-    <div style="display: flex; align-items: center; justify-content: space-between; ">
-      <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
+    <div
+      style="display: flex; align-items: center; justify-content: space-between; "
+    >
+      <img
+        src="../assets/static-logo.png"
+        alt="SkitMe Logo"
+        style="width: 20%"
+      />
       <button class="smallButton" @click="restartGame">Start a new Game</button>
     </div>
-    <img src="../assets/note-gray.png" alt="And here are your Skits..." style="width: 50%" />
+    <img
+      src="../assets/note-gray.png"
+      alt="And here are your Skits..."
+      style="width: 50%"
+    />
     <div class="sheets-container">
       <!-- <p>{{ $store.state.currentStage.results }}</p> -->
       <div
@@ -14,7 +24,7 @@
       >
         <h2>
           This is the story
-          <span style="color: #4C7DFD">{{sheet[0].player}}</span>
+          <span style="color: #4C7DFD">{{ sheet[0].player || "NoName" }}</span>
           started...
         </h2>
         <div v-for="(phase, index) in sheet" :key="index">

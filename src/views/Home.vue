@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
+    <img src="../assets/skitmelogo.gif" id="logoMain" alt="SkitMe Logo" style="width: 50%" />
     <br />
     <button @click="startGame" class="bigButton">Start Game</button>
     <p class="interaction">
@@ -13,7 +13,7 @@
           >Privacy statement</a
         >
       </div>
-      <img src="../assets/footer-note.svg" alt="" />
+      <!-- <img src="../assets/footer-note.svg" alt="" /> -->
     </footer>
   </div>
 </template>

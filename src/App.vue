@@ -26,7 +26,7 @@
   font-family: "Indie Flower", cursive;
   font-size: 3em;
   font-weight: bold;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #app {
@@ -34,7 +34,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 body {
@@ -53,18 +53,18 @@ body {
 h1 {
   font-family: "Secular One", sans-serif;
   font-size: 3em;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 h2 {
   font-family: "Secular One", sans-serif;
   font-size: 1.8em;
-  color: #2c3e50;
+  color: #233e50;
 }
 h3 {
   font-family: "Secular One", sans-serif;
   font-size: 1.5em;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #nav {
@@ -72,7 +72,7 @@ h3 {
 }
 
 #linkToRoom {
-  border: #2c3e50 3px solid;
+  border: #233e50 3px solid;
   background-color: rgb(255, 255, 255);
   margin: 1em 1em 2em 1em;
   padding: 5px 5px;
@@ -89,7 +89,7 @@ h3 {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #nav a.router-link-exact-active {
@@ -97,18 +97,15 @@ h3 {
 }
 
 .instructions {
-  font-family: "Indie Flower", cursive;
-  background-color: rgb(253, 253, 226);
-  font-size: 1.3vw;
+  font-family: "Secular One", sans-serif;
+  color: #233e50;
+  font-size: 1.7em;
   text-align: center;
   width: 60%;
   height: 75px;
   margin: 2em auto;
-  border: #d2723a 2px dotted;
-  border-radius: 5px;
   display: grid;
   align-items: center;
-  /* margin-top: 2em; */
 }
 
 .instructions h2 {
@@ -117,16 +114,12 @@ h3 {
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: bold;
   line-height: 1.7em;
-  background-color: #f7b501;
-  color: rgb(63, 62, 62);
-  padding: 12px;
-  display: block;
-  width: 800px;
-  margin: 10px auto;
-  margin-top: 2em;
+  /* color still needs to change, it clashes with the petrol */
+  color: #233e50;
+  max-width: 50vw;
 }
 
 .playerNames {
@@ -146,8 +139,8 @@ h3 {
 }
 
 .bigButton {
-  background-color: #008080;
-  color: white;
+  background-color: #eba6a3;
+  color: #233e50;
   font-family: "Secular One", sans-serif;
   font-size: 2em;
   border: none;
@@ -161,8 +154,8 @@ h3 {
 }
 
 .smallButton {
-  background-color: #008080;
-  color: white;
+  background-color: #eba6a3;
+  color: #233e50;
   font-family: "Secular One", sans-serif;
   font-size: 1.5em;
   border: none;
@@ -185,17 +178,17 @@ h3 {
 .interaction {
   grid-area: interaction;
   justify-content: center;
+  color: #233e50;
 }
 
 .countdown {
   font-size: 2em;
   font-family: "Secular One", sans-serif;
-  color: rgb(0, 0, 0);
+  color: #233e50;
   width: 1.5em;
   height: 1.5em;
   display: block;
-  background-color: #d2723a;
-  border: black 3px solid;
+  background-color: #ffc24b;
   border-radius: 50%;
   grid-area: timer;
   justify-self: right;
@@ -207,13 +200,13 @@ input {
   height: 1em;
   padding: 0.3em 1em;
   margin: 1em auto 1.5em;
-  font-size: 2em;
-  border: black 3px solid;
+  font-size: 1.7em;
+  color: #233e50;
+  border: #233e50 3px solid;
 }
 
-::placeholder {
-  color: rgb(0, 0, 0);
-  opacity: 0.2; /* Firefox */
+#logoMain {
+  width: 50%;
 }
 
 #logo {
@@ -221,13 +214,20 @@ input {
   margin: 10px auto;
 }
 
+::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 0.2; /* Firefox */
+}
+
 #footer-links {
+  font-size: 1em;
   display: flex;
   justify-content: center;
   height: 0em;
 }
 
 #footer-links a {
+  font-size: 1em;
   margin: 0 3em;
 }
 
@@ -243,7 +243,7 @@ input {
 
 a {
   text-decoration: none;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 a:hover {

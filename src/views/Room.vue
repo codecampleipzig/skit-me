@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="SkitMe Logo" src="../assets/skitmelogo.gif" />
+    <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
     <component :is="activeComponent"></component>
   </div>
 </template>
