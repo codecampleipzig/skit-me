@@ -49,13 +49,25 @@ const store = new Vuex.Store({
       socket.emit("signalReady");
     },
     completeSeed(ctx, descriptionTitle) {
-      socket.emit("completeWriting", descriptionTitle);
+      socket.emit(
+        "completeWriting",
+        descriptionTitle,
+        ctx.state.currentState.sheetId
+      );
     },
     completeDrawing(ctx, drawingURL) {
-      socket.emit("completeDrawing", drawingURL);
+      socket.emit(
+        "completeDrawing",
+        drawingURL,
+        ctx.state.currentState.sheetId
+      );
     },
     completeWriting(ctx, descriptionTitle) {
-      socket.emit("completeWriting", descriptionTitle);
+      socket.emit(
+        "completeWriting",
+        descriptionTitle,
+        ctx.state.currentState.sheetId
+      );
     },
     restartGame(ctx) {
       ctx.commit("SET_NEXT_STAGE", { name: "PlayerLobby" });
@@ -67,23 +79,26 @@ socket.on("roomUpdate", room => {
   store.dispatch("roomUpdate", room);
 });
 
-socket.on("startSeed", () => {
+socket.on("startSeed", sheetId => {
   store.commit("SET_NEXT_STAGE", {
-    name: "GameSeedPhase"
+    name: "GameSeedPhase",
+    sheetId
   });
 });
 
-socket.on("startDrawing", descriptionTitle => {
+socket.on("startDrawing", (descriptionTitle, sheetId) => {
   store.commit("SET_NEXT_STAGE", {
     name: "DrawingPhase",
-    descriptionTitle
+    descriptionTitle,
+    sheetId
   });
 });
 
-socket.on("startWriting", drawingURL => {
+socket.on("startWriting", (drawingURL, sheetId) => {
   store.commit("SET_NEXT_STAGE", {
     name: "WritingPhase",
-    drawingURL
+    drawingURL,
+    sheetId
   });
 });
 
