@@ -11,9 +11,9 @@
       </h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="100000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="10000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
-        <Canvas width="800" height="600" ref="canvas" />
+        <Canvas width="800" height="600" color="black" ref="canvas" />
       </div>
     </div>
   </div>
