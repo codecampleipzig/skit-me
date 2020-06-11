@@ -9,6 +9,7 @@
         <input
           v-model="descriptionTitle"
           type="text"
+          maxlength="40"
           placeholder="A cookie drank my milk"
         />
       </div>

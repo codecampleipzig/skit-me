@@ -12,7 +12,7 @@
         <span class="drawThisTitle">
           {{
             $store.state.currentStage.descriptionTitle ||
-              "The player before you wasn't creative... So you can draw anything you like!"
+              "Oh...no input... Draw anything you like!"
           }}
         </span>
       </h2>
@@ -20,7 +20,7 @@
     <div class="timer-phase-container">
       <Timer :timerLengthInMs="25000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
-        <Canvas width="800" height="600" color="black" ref="canvas" />
+        <Canvas width="800" height="600" color="#233E50" ref="canvas" />
       </div>
     </div>
   </div>

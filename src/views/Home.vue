@@ -13,7 +13,7 @@
           >Privacy statement</a
         >
       </div>
-      <img src="../assets/footer-note.svg" alt="" />
+      <!-- <img src="../assets/footer-note.svg" alt="" /> -->
     </footer>
   </div>
 </template>

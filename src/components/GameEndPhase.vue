@@ -14,14 +14,15 @@
       <!-- <p>{{ $store.state.currentStage.results }}</p> -->
       <div
         class="sheet-item"
-        v-for="(sheets, index) in $store.state.currentStage.results"
+        v-for="(sheet, index) in $store.state.currentStage.sheets"
         :key="index"
       >
         <h2>
-          This is the story <span style="color: #4C7DFD">Inga</span>
+          This is the story
+          <span style="color: #4C7DFD">{{ sheet[0].player || "NoName" }}</span>
           started...
         </h2>
-        <div v-for="(phase, index) in sheets" :key="index">
+        <div v-for="(phase, index) in sheet" :key="index">
           <img v-if="phase.type == 'drawing'" :src="phase.content" />
           <h3 class="title-name" v-else>{{ phase.content }}</h3>
         </div>

@@ -8,27 +8,19 @@
         Copy Link
       </button>
     </div>
-    <h1>Who's playing?</h1>
+    <h2>Who's playing?</h2>
     <div class="playerNames">
-      <!-- <p
+      <p
         :key="index"
-        v-for="(player, index) in room.players.filter(player => player.connected)"
+        v-for="(player, index) in room.players.filter(
+          player => player.connected
+        )"
       >
         {{ player.userName }}
-      </p> -->
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
+      </p>
     </div>
     <button class="bigButton" @click="signalReady">
-      We're all in, let's start!
+      I'm ready!
     </button>
   </div>
 </template>
@@ -56,18 +48,11 @@ export default {
       this.$store.dispatch("signalReady");
     },
     copyLink() {
-      /* Get the text field */
-      var copyText = document.getElementById("#linktoRoom");
-
-      /* Select the text field */
-      copyText.select();
-      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-      /* Copy the text inside the text field */
-      document.execCommand("copy");
-
-      /* Alert the copied text */
-      alert("Copied the text: " + copyText.value);
+      // Get the text field
+      const copyText = document.querySelector("#linkToRoom");
+      navigator.clipboard.writeText(copyText.textContent);
+      // Alert the copied text
+      // alert("Link Copied to the Clipboard: " + copyText.textContent);
     }
   }
 };

@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 canvas {
-  border: 3px black solid;
+  border: 3px solid #233e50;
   background-color: white;
   max-width: 80%;
   width: auto;

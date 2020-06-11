@@ -26,7 +26,7 @@
   font-family: "Indie Flower", cursive;
   font-size: 3em;
   font-weight: bold;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #app {
@@ -34,7 +34,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 body {
@@ -53,18 +53,18 @@ body {
 h1 {
   font-family: "Secular One", sans-serif;
   font-size: 3em;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 h2 {
   font-family: "Secular One", sans-serif;
   font-size: 1.8em;
-  color: #2c3e50;
+  color: #233e50;
 }
 h3 {
   font-family: "Secular One", sans-serif;
   font-size: 1.5em;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #nav {
@@ -72,7 +72,7 @@ h3 {
 }
 
 #linkToRoom {
-  border: #2c3e50 3px solid;
+  border: #233e50 3px solid;
   background-color: rgb(255, 255, 255);
   margin: 1em 1em 2em 1em;
   padding: 5px 5px;
@@ -89,7 +89,7 @@ h3 {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 #nav a.router-link-exact-active {
@@ -98,7 +98,7 @@ h3 {
 
 .instructions {
   font-family: "Secular One", sans-serif;
-  color: #008080;
+  color: #233e50;
   font-size: 1.7em;
   text-align: center;
   width: 60%;
@@ -118,7 +118,7 @@ h3 {
   font-weight: bold;
   line-height: 1.7em;
   /* color still needs to change, it clashes with the petrol */
-  color: #ee724b;
+  color: #233e50;
   max-width: 50vw;
 }
 
@@ -139,8 +139,8 @@ h3 {
 }
 
 .bigButton {
-  background-color: #008080;
-  color: white;
+  background-color: #eba6a3;
+  color: #233e50;
   font-family: "Secular One", sans-serif;
   font-size: 2em;
   border: none;
@@ -154,8 +154,8 @@ h3 {
 }
 
 .smallButton {
-  background-color: #008080;
-  color: white;
+  background-color: #eba6a3;
+  color: #233e50;
   font-family: "Secular One", sans-serif;
   font-size: 1.5em;
   border: none;
@@ -178,12 +178,13 @@ h3 {
 .interaction {
   grid-area: interaction;
   justify-content: center;
+  color: #233e50;
 }
 
 .countdown {
   font-size: 2em;
   font-family: "Secular One", sans-serif;
-  color: #2c3e50;
+  color: #233e50;
   width: 1.5em;
   height: 1.5em;
   display: block;
@@ -200,8 +201,8 @@ input {
   padding: 0.3em 1em;
   margin: 1em auto 1.5em;
   font-size: 1.7em;
-  color: #2c3e50;
-  border: #2c3e50 3px solid;
+  color: #233e50;
+  border: #233e50 3px solid;
 }
 
 #logoMain {
@@ -218,14 +219,15 @@ input {
   opacity: 0.2; /* Firefox */
 }
 
-
 #footer-links {
+  font-size: 1em;
   display: flex;
   justify-content: center;
   height: 0em;
 }
 
 #footer-links a {
+  font-size: 1em;
   margin: 0 3em;
 }
 
@@ -241,7 +243,7 @@ input {
 
 a {
   text-decoration: none;
-  color: #2c3e50;
+  color: #233e50;
 }
 
 a:hover {

@@ -6,8 +6,9 @@
       <input
         v-model.trim="username"
         type="text"
-        placeholder="What's your Name?"
-        maxlength="10"
+        placeholder="What's your name?"
+        minlength="1"
+        maxlength="15"
       />
       <button type="submit" class="bigButton">Join the Game</button>
     </form>
@@ -17,9 +18,7 @@
     <footer>
       <div id="footer-links">
         <a href="https://codecampleipzig.de/impressum.html">Imprint</a>
-        <a href="https://codecampleipzig.de/impressum.html"
-          >Privacy statement</a
-        >
+        <a href="https://codecampleipzig.de/privacy.html">Privacy statement</a>
       </div>
     </footer>
   </div>
