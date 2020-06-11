@@ -2,12 +2,16 @@
   <div>
     <div class="instructions">
       <h2>
-        <span v-if="$store.state.currentStage.descriptionTitle"
-          >Draw this title:<br /></span
-        ><span style="color:red">{{
+        <span v-if="$store.state.currentStage.descriptionTitle">
+          Draw this title:
+          <br />
+        </span>
+        <span style="color:red">
+          {{
           $store.state.currentStage.descriptionTitle ||
-            "The player before you didn't give a title... Draw Something!"
-        }}</span>
+          "The player before you didn't give a title... Draw Something!"
+          }}
+        </span>
       </h2>
     </div>
     <div class="timer-phase-container">
