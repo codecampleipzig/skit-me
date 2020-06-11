@@ -1,6 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
     <div
       style="display: flex; align-items: center; justify-content: space-between; "
     >
@@ -31,18 +30,6 @@
           <img v-if="phase.type == 'drawing'" :src="phase.content" />
           <h3 class="title-name" v-else>{{ phase.content }}</h3>
         </div>
-=======
-    <h1>The End</h1>
-
-    <button @click="restartGame">Start a new Game</button>
-    <div
-      v-for="(sheet, index) in $store.state.currentStage.sheets"
-      :key="index"
-    >
-      <div v-for="(result, index) in sheet" :key="index">
-        <img v-if="result.type == 'drawing'" :src="result.content" />
-        <h2 v-else>{{ result.content }}</h2>
->>>>>>> develop
       </div>
     </div>
   </div>
