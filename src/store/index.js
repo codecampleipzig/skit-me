@@ -52,21 +52,21 @@ const store = new Vuex.Store({
       socket.emit(
         "completeWriting",
         descriptionTitle,
-        ctx.state.currentState.sheetId
+        ctx.state.currentStage.sheetId
       );
     },
     completeDrawing(ctx, drawingURL) {
       socket.emit(
         "completeDrawing",
         drawingURL,
-        ctx.state.currentState.sheetId
+        ctx.state.currentStage.sheetId
       );
     },
     completeWriting(ctx, descriptionTitle) {
       socket.emit(
         "completeWriting",
         descriptionTitle,
-        ctx.state.currentState.sheetId
+        ctx.state.currentStage.sheetId
       );
     },
     restartGame(ctx) {
