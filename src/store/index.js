@@ -4,7 +4,7 @@ import axios from "axios";
 import router from "@/router";
 import io from "socket.io-client";
 
-const socket = io("https://skitme.herokuapp.com/");
+const socket = io(process.env.VUE_APP_API_URL);
 
 Vue.use(Vuex);
 
@@ -26,7 +26,7 @@ const store = new Vuex.Store({
   },
   actions: {
     async startGame() {
-      const res = await axios.post("https://skitme.herokuapp.com/rooms");
+      const res = await axios.post(`${process.env.VUE_APP_API_URL}/rooms`);
       console.log(res.data);
       router.push({ name: "JoinRoom", params: { roomId: res.data.roomId } });
     },
