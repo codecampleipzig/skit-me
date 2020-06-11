@@ -2,35 +2,21 @@
   <div>
     <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
     <h1>Invite your Friends!</h1>
-    <h2>We recommend 4-10 players</h2>
+    <h2>Multiplayergame for 2 to 8 players</h2>
+
     <div style="display:flex; justify-content:center; align-items:center">
       <p id="linkToRoom">{{ url }}/join/{{ room.roomId }}</p>
-      <button class="smallButton" @click="copyLink()" type="submit">
-        Copy Link
-      </button>
+      <button class="smallButton" @click="copyLink()" type="submit">Copy Link</button>
     </div>
     <h1>Who's playing?</h1>
     <div class="playerNames">
-      <!-- <p
+      <p
         :key="index"
+        v-bind:class="{ ready: player.ready}"
         v-for="(player, index) in room.players.filter(player => player.connected)"
-      >
-        {{ player.userName }}
-      </p> -->
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
-      <p>1234567890</p>
+      >{{ player.userName }}</p>
     </div>
-    <button class="bigButton" @click="signalReady">
-      We're all in, let's start!
-    </button>
+    <button class="bigButton" @click="signalReady">We're all in, let's start!</button>
   </div>
 </template>
 
@@ -58,20 +44,27 @@ export default {
     },
     copyLink() {
       /* Get the text field */
-      var copyText = document.getElementById("#linktoRoom");
+      let copyText = document.querySelector("#linkToRoom");
+      copyText.setAttribute("type", "text");
+      copyText.select();
+      console.log(copyText);
 
       /* Select the text field */
-      copyText.select();
-      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+      // copyText.select();
+      // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-      /* Copy the text inside the text field */
-      document.execCommand("copy");
+      // /* Copy the text inside the text field */
+      // document.execCommand("copy");
 
-      /* Alert the copied text */
-      alert("Copied the text: " + copyText.value);
+      // /* Alert the copied text */
+      // alert("Copied the text: " + copyText.value);
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.ready {
+  color: #ea591a;
+}
+</style>

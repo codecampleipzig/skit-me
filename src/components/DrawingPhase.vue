@@ -6,7 +6,7 @@
           Draw this title:
           <br />
         </span>
-        <span style="color:red">
+        <span style="color:red" class: descriptiontitle>
           {{
           $store.state.currentStage.descriptionTitle ||
           "The player before you didn't give a title... Draw Something!"

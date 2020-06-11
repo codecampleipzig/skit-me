@@ -1,32 +1,23 @@
 <template>
   <div>
-    <div
-      style="display: flex; align-items: center; justify-content: space-between; "
-    >
-      <img
-        src="../assets/static-logo.png"
-        alt="SkitMe Logo"
-        style="width: 20%"
-      />
+    <div style="display: flex; align-items: center; justify-content: space-between; ">
+      <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
       <button class="smallButton" @click="restartGame">Start a new Game</button>
     </div>
-    <img
-      src="../assets/note-gray.png"
-      alt="And here are your Skits..."
-      style="width: 50%"
-    />
+    <img src="../assets/note-gray.png" alt="And here are your Skits..." style="width: 50%" />
     <div class="sheets-container">
       <!-- <p>{{ $store.state.currentStage.results }}</p> -->
       <div
         class="sheet-item"
-        v-for="(sheets, index) in $store.state.currentStage.results"
+        v-for="(sheet, index) in $store.state.currentStage.sheets"
         :key="index"
       >
         <h2>
-          This is the story <span style="color: #4C7DFD">Inga</span>
+          This is the story
+          <span style="color: #4C7DFD">{{sheet[0].player}}</span>
           started...
         </h2>
-        <div v-for="(phase, index) in sheets" :key="index">
+        <div v-for="(phase, index) in sheet" :key="index">
           <img v-if="phase.type == 'drawing'" :src="phase.content" />
           <h3 class="title-name" v-else>{{ phase.content }}</h3>
         </div>
