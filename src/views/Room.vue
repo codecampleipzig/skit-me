@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
-    <img src="../assets/static-logo.png" alt="SkitMe Logo" style="width: 20%" />
-    <component :is="activeComponent"></component>
+  <div>
+    <img id="logo" src="../assets/static-logo.png" alt="SkitMe Logo" />
+    <div id="content">
+      <component :is="activeComponent"></component>
+    </div>
   </div>
 </template>
 

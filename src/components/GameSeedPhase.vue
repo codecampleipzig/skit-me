@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>
-      <h2 class="instructions">Create a Title, anything! Really!</h2>
-    </div>
+    <h2 class="instructions">
+      Create a Title, anything! Really!
+    </h2>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="20000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <input
           v-model="descriptionTitle"

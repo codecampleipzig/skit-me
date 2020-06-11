@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <img src="../assets/skitmelogo.gif" id="logoMain" alt="SkitMe Logo" style="width: 50%" />
+  <div id="content">
+    <img
+      src="../assets/skitmelogo.gif"
+      id="logoMain"
+      alt="SkitMe Logo"
+      style="width: 50%"
+    />
     <br />
     <button @click="startGame" class="bigButton">Start Game</button>
     <p class="interaction">
@@ -9,9 +14,7 @@
     <footer>
       <div id="footer-links">
         <a href="https://codecampleipzig.de/impressum.html">Imprint</a>
-        <a href="https://codecampleipzig.de/impressum.html"
-          >Privacy statement</a
-        >
+        <a href="https://codecampleipzig.de/privacy.html">Privacy statement</a>
       </div>
       <!-- <img src="../assets/footer-note.svg" alt="" /> -->
     </footer>

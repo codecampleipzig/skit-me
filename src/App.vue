@@ -33,8 +33,11 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #233e50;
+}
+
+#content {
+  text-align: center;
 }
 
 body {
@@ -61,6 +64,7 @@ h2 {
   font-size: 1.8em;
   color: #233e50;
 }
+
 h3 {
   font-family: "Secular One", sans-serif;
   font-size: 1.5em;
@@ -99,7 +103,7 @@ h3 {
 .instructions {
   font-family: "Secular One", sans-serif;
   color: #233e50;
-  font-size: 1.7em;
+  font-size: 1.7rem;
   text-align: center;
   width: 60%;
   height: 75px;
@@ -108,9 +112,9 @@ h3 {
   align-items: center;
 }
 
-.instructions h2 {
+/* .instructions h2 {
   margin: 0 auto;
-}
+} */
 
 .drawThisTitle {
   font-family: "Secular One", sans-serif;
@@ -157,15 +161,22 @@ h3 {
   background-color: #eba6a3;
   color: #233e50;
   font-family: "Secular One", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   border: none;
   border-radius: 8px;
-  padding: 12px 32px;
+  padding: 1.1rem 1.3rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
+  margin: 0.2rem 0.1rem;
   cursor: pointer;
+}
+
+#restartButton {
+  position: absolute;
+  margin: 0.7rem 0.7rem;
+  right: 0.7rem;
+  top: 1rem;
 }
 
 .timer-phase-container {
@@ -182,11 +193,11 @@ h3 {
 }
 
 .countdown {
-  font-size: 2em;
+  font-size: 3em;
   font-family: "Secular One", sans-serif;
   color: #233e50;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.8em;
+  height: 1.8em;
   display: block;
   background-color: #ffc24b;
   border-radius: 50%;
@@ -211,7 +222,7 @@ input {
 
 #logo {
   width: 25vw;
-  margin: 10px auto;
+  margin: 10px 10px;
 }
 
 ::placeholder {
@@ -266,25 +277,37 @@ footer img {
   grid-gap: calc(20px / 2);
   grid-template-columns: repeat(8, calc(50% - 20px * 2));
   padding: 0 20px;
-  overflow-x: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 100vw;
   scroll-snap-type: x proximity;
   padding-bottom: calc(0.75 * 20px);
   margin-bottom: calc(-0.25 * 20px);
-}
-
-.sheet-item {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
   column-gap: 10px;
   row-gap: 15px;
   margin-right: 20px;
 }
 
+/* .sheet-item {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+} */
+
 .sheet-column {
   display: grid;
   flex-direction: column;
   grid-template-columns: auto;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 footer {

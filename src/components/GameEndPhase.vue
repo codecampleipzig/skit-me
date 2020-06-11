@@ -3,13 +3,11 @@
     <div
       style="display: flex; align-items: center; justify-content: space-between; "
     >
-      <img
-        src="../assets/static-logo.png"
-        alt="SkitMe Logo"
-        style="width: 20%"
-      />
-      <button class="smallButton" @click="restartGame">Start a new Game</button>
+      <button class="smallButton" id="restartButton" @click="restartGame">
+        Start a new Game
+      </button>
     </div>
+
     <img
       src="../assets/note-gray.png"
       alt="And here are your Skits..."
@@ -24,7 +22,9 @@
       >
         <h2>
           This is the story
-          <span style="color: #4C7DFD">{{ sheet[0].player || "NoName" }}</span>
+          <span style="margin-top:3rem; color: #4C7DFD">{{
+            sheet[0].player || "NoName"
+          }}</span>
           started...
         </h2>
         <div v-for="(phase, index) in sheet" :key="index">
@@ -58,4 +58,8 @@ h2,
 h3 {
   font-family: "Indie Flower", cursive;
 }
+
+/* body {
+  margin-bottom: 0;
+} */
 </style>

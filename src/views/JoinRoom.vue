@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
     <br />
     <form @submit.prevent="submit">

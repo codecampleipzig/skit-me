@@ -1,9 +1,9 @@
 <template>
   <div>
     <h2 class="instructions">
-      What do you see? Give it a Title!
+      What do you see? Give it a title!
     </h2>
-    <Timer :timerLengthInMs="20000" ref="timer" @timerfinished="finished" />
+    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
     <input v-model="descriptionTitle" type="text" />
     <br />
     <img :src="$store.state.currentStage.drawingURL" />

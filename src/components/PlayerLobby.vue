@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Invite your Friends!</h1>
-    <h2>Multiplayergame for 2 to 8 players</h2>
+    <h2>Multiplayer Game for 2 to 8 players</h2>
 
     <div style="display:flex; justify-content:center; align-items:center">
       <p id="linkToRoom">{{ url }}/join/{{ room.roomId }}</p>

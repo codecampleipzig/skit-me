@@ -18,7 +18,7 @@
       </h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="25000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <Canvas width="800" height="600" color="#233E50" ref="canvas" />
       </div>
@@ -50,4 +50,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
