@@ -248,20 +248,20 @@ input {
 }
 
 .note-background {
-  background-image: url(/img/blue-note.43914619.png);
+  background-image: url(assets/blue-note.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 72em 100%;
+  background-size: 72rem 100%;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
 .note-background-draw {
-  background-image: url(/img/blue-note.43914619.png);
+  background-image: url(assets/blue-note.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 75em 100%;
+  background-size: 75rem 100%;
   justify-content: center;
   align-items: center;
   display: flex;
