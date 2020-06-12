@@ -20,6 +20,21 @@
   :root {
     font-size: 10px;
   }
+
+  .smallButton {
+    background-color: #eba6a3;
+    color: #233e50;
+    font-family: "Secular One", sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.2rem 0.1rem;
+    cursor: pointer;
+  }
 }
 
 .interaction {
@@ -109,7 +124,7 @@ h3 {
   color: #233e50;
   font-size: 2rem;
   text-align: center;
-  width: 60%;
+  width: 70%;
   height: 4rem;
   margin: 2em auto;
   display: grid;
@@ -205,6 +220,7 @@ h3 {
   display: block;
   background-color: #ffc24b;
   border-radius: 50%;
+  line-height: 1.8em;
   grid-area: timer;
   justify-self: right;
 }

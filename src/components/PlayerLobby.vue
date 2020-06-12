@@ -6,7 +6,9 @@
     <h2>Multiplayer Game for 2 to 8 players</h2>
 
     <div style="display:flex; justify-content:center; align-items:center">
-      <p id="linkToRoom">{{ url }}/join/{{ room.roomId }}</p>
+      <p style="overflow: auto" id="linkToRoom">
+        {{ url }}/join/{{ room.roomId }}
+      </p>
       <button class="smallButton" @click="copyLink()" type="submit">
         Copy Link
       </button>
