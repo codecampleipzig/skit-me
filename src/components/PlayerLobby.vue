@@ -4,6 +4,7 @@
       Invite your Friends!
     </h1>
     <h2>Multiplayer Game for 2 to 8 players</h2>
+    <h2>Copy the link and share it with your friends</h2>
 
     <div style="display:flex; justify-content:center; align-items:center">
       <p style="overflow: auto" id="linkToRoom">
@@ -25,6 +26,7 @@
         {{ player.userName }}
       </p>
     </div>
+    <h2>When everybody's here, press the button below</h2>
     <button class="bigButton" @click="signalReady">
       I'm ready!
     </button>

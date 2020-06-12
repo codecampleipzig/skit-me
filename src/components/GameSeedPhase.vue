@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div class="timer-phase-container">
-      <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
+      <Timer :timerLengthInMs="25000" ref="timer" @timerfinished="finished" />
       <div class="interaction">
         <input
           v-model="descriptionTitle"

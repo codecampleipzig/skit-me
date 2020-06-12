@@ -5,7 +5,7 @@
         What do you see? Give it a title!
       </h2>
     </div>
-    <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
+    <Timer :timerLengthInMs="25000" ref="timer" @timerfinished="finished" />
     <input v-model="descriptionTitle" type="text" />
     <br />
     <img :src="$store.state.currentStage.drawingURL" />
