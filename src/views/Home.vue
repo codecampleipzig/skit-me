@@ -1,11 +1,6 @@
 <template>
   <div id="content">
-    <img
-      src="../assets/skitmelogo.gif"
-      id="logoMain"
-      alt="SkitMe Logo"
-      style="width: 50%"
-    />
+    <img src="../assets/skitmelogo.gif" id="logoMain" alt="SkitMe Logo" />
     <br />
     <button @click="startGame" class="bigButton">Start Game</button>
     <p class="interaction">

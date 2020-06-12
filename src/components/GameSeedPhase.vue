@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h2 class="instructions">
-      Create a Title, anything! Really!
-    </h2>
+    <div class="note-background">
+      <h2 class="instructions">
+        Create a Title, anything! Really!
+      </h2>
+    </div>
     <div class="timer-phase-container">
       <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
       <div class="interaction">

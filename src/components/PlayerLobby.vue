@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Invite your Friends!</h1>
+    <h1>
+      Invite your Friends!
+    </h1>
     <h2>Multiplayer Game for 2 to 8 players</h2>
 
     <div style="display:flex; justify-content:center; align-items:center">
@@ -12,6 +14,7 @@
     <h2>Who's playing?</h2>
     <div class="playerNames">
       <p
+        :class="{ ready: player.ready }"
         :key="index"
         v-for="(player, index) in room.players.filter(
           player => player.connected

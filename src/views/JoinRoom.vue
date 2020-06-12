@@ -1,14 +1,16 @@
 <template>
   <div id="content">
-    <img src="../assets/skitmelogo.gif" alt="SkitMe Logo" style="width: 50%" />
+    <img id="logoMain" src="../assets/skitmelogo.gif" alt="SkitMe Logo" />
     <br />
     <form @submit.prevent="submit">
       <input
+        class="player-name-input"
         v-model.trim="username"
         type="text"
         placeholder="What's your name?"
-        minlength="1"
+        required
         maxlength="15"
+        pattern=".{1,15}"
       />
       <button type="submit" class="bigButton">Join the Game</button>
     </form>

@@ -118,5 +118,6 @@ canvas {
   background-color: white;
   max-width: 80%;
   width: auto;
+  cursor: url(../assets/pencil-cursor.png), auto;
 }
 </style>

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div>
+    <div class="note-background-draw">
       <h2>
         <span
           class="instructions"
+          style="margin: 0 auto"
           v-if="$store.state.currentStage.descriptionTitle"
         >
           Draw this title!

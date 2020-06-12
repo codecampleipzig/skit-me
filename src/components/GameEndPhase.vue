@@ -22,7 +22,7 @@
       >
         <h2>
           This is the story
-          <span style="margin-top:3rem; color: #4C7DFD">{{
+          <span style="margin-top:3rem; color: #EE724B">{{
             sheet[0].player || "NoName"
           }}</span>
           started...

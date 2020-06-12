@@ -2,7 +2,9 @@
   <div>
     <img id="logo" src="../assets/static-logo.png" alt="SkitMe Logo" />
     <div id="content">
-      <component :is="activeComponent"></component>
+      <transition name="slide">
+        <component :is="activeComponent"></component>
+      </transition>
     </div>
   </div>
 </template>
@@ -33,3 +35,27 @@ export default {
   }
 };
 </script>
+
+<style>
+.slide-enter {
+  transform: translateX(-100vw);
+}
+
+.slide-enter-active {
+  transition: transform 1s ease;
+}
+
+.slide-enter-to,
+.slide-leave {
+  transform: none;
+}
+
+.slide-leave-active {
+  transition: transform 1s ease;
+  position: absolute;
+}
+
+.slide-leave-to {
+  transform: translateX(100vw);
+}
+</style>

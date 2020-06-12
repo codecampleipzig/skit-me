@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h2 class="instructions">
-      What do you see? Give it a title!
-    </h2>
+    <div class="note-background">
+      <h2 class="instructions">
+        What do you see? Give it a title!
+      </h2>
+    </div>
     <Timer :timerLengthInMs="5000" ref="timer" @timerfinished="finished" />
     <input v-model="descriptionTitle" type="text" />
     <br />

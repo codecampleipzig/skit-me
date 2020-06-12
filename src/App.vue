@@ -40,6 +40,10 @@
   text-align: center;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-image: url(assets/paper-background.png);
   background-size: cover;
@@ -103,10 +107,10 @@ h3 {
 .instructions {
   font-family: "Secular One", sans-serif;
   color: #233e50;
-  font-size: 1.7rem;
+  font-size: 2rem;
   text-align: center;
   width: 60%;
-  height: 75px;
+  height: 4rem;
   margin: 2em auto;
   display: grid;
   align-items: center;
@@ -122,7 +126,7 @@ h3 {
   font-weight: bold;
   line-height: 1.7em;
   /* color still needs to change, it clashes with the petrol */
-  color: #233e50;
+  color: #f3fffe;
   max-width: 50vw;
 }
 
@@ -217,7 +221,8 @@ input {
 }
 
 #logoMain {
-  width: 50%;
+  width: 55%;
+  margin: 5rem auto;
 }
 
 #logo {
@@ -240,6 +245,26 @@ input {
 #footer-links a {
   font-size: 1em;
   margin: 0 3em;
+}
+
+.note-background {
+  background-image: url(/img/blue-note.43914619.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 72em 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.note-background-draw {
+  background-image: url(/img/blue-note.43914619.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75em 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .footer-content {
@@ -279,7 +304,6 @@ footer img {
   padding: 0 20px;
   overflow-x: auto;
   overflow-y: auto;
-  height: 100vw;
   scroll-snap-type: x proximity;
   padding-bottom: calc(0.75 * 20px);
   margin-bottom: calc(-0.25 * 20px);
@@ -288,26 +312,14 @@ footer img {
   margin-right: 20px;
 }
 
-/* .sheet-item {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-} */
+.sheet-item {
+  height: max-content;
+}
 
 .sheet-column {
   display: grid;
   flex-direction: column;
   grid-template-columns: auto;
-}
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 footer {
